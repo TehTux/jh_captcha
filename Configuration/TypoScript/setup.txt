@@ -1,0 +1,11 @@
+
+plugin.tx_jhcaptcha {
+    settings {
+        reCaptcha {
+            theme = {$plugin.tx_jhcaptcha.settings.theme}
+            type = {$plugin.tx_jhcaptcha.settings.type}
+            lang = {$plugin.tx_jhcaptcha.settings.lang}
+            siteKey = {$plugin.tx_jhcaptcha.settings.siteKey}
+        }
+    }
+}
