@@ -1,0 +1,45 @@
+{
+    "modules": [
+
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "Captcha library",
+        "emConf": {
+            "category": "misc",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": "1.0"
+        },
+        "extensionKey": "jh_captcha",
+        "name": "JH Captcha",
+        "originalExtensionKey": "jh_captcha",
+        "persons": [
+            {
+                "company": "",
+                "email": "info@jan-haffner.de",
+                "name": "Jan Haffner",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+
+        ],
+        "vendorName": "Haffner"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2015-02-25 06:07",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (1)"
+    }
+}
