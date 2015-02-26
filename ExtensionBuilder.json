@@ -6,7 +6,7 @@
         "backendModules": [
 
         ],
-        "description": "Captcha library",
+        "description": "Library for Google reCaptcha",
         "emConf": {
             "category": "misc",
             "custom_category": "",
@@ -16,10 +16,10 @@
             "sourceLanguage": "en",
             "state": "alpha",
             "targetVersion": "6.2",
-            "version": "1.0"
+            "version": "1.0.0"
         },
         "extensionKey": "jh_captcha",
-        "name": "JH Captcha",
+        "name": "Captcha Library",
         "originalExtensionKey": "jh_captcha",
         "persons": [
             {
@@ -38,7 +38,7 @@
 
     ],
     "log": {
-        "last_modified": "2015-02-25 06:07",
+        "last_modified": "2015-02-25 11:56",
         "extension_builder_version": "6.2.0",
         "be_user": " (1)"
     }

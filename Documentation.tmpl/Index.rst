@@ -8,7 +8,7 @@
 .. _start:
 
 =============================================================
-JH Captcha
+Captcha Library
 =============================================================
 
 .. only:: html
@@ -23,7 +23,7 @@ JH Captcha
 		en
 
 	:Description:
-		Captcha library
+		Library for Google reCaptcha
 
 	:Keywords:
 		comma,separated,list,of,keywords

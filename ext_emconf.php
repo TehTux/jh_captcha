@@ -11,8 +11,8 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'JH Captcha',
-	'description' => 'Captcha library',
+	'title' => 'Captcha Library',
+	'description' => 'Library for Google reCaptcha',
 	'category' => 'misc',
 	'author' => 'Jan Haffner',
 	'author_email' => 'info@jan-haffner.de',
@@ -21,7 +21,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'uploadfolder' => '0',
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
-	'version' => '1.0',
+	'version' => '1.0.0',
 	'constraints' => array(
 		'depends' => array(
 			'typo3' => '6.2',
