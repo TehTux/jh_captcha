@@ -9,13 +9,13 @@
 .. _start:
 
 =============================================================
-###PROJECT_NAME### (Deutsch)
+No CAPTCHA reCAPTCHA
 =============================================================
 
 .. only:: html
 
 	:Klassifikation:
-		extension_key
+		jh_captcha
 
 	:Version:
 		|release|
@@ -24,19 +24,16 @@
 		de
 
 	:Beschreibung:
-		Geben Sie eine Beschreibung ein.
-
-	:Schlüsselwörter:
-		komma-getrennte,Liste,von,Schlüsselwörtern
+		Benutze "No CAPTCHA reCAPTCHA" in deiner TYPO3 extension.
 
 	:Copyright:
-		###YEAR###
+		2015
 
 	:Autor:
-		###AUTHOR###
+		Jan Haffner
 
 	:E-Mail:
-		author@example.com
+		info@jan-haffner.de
 
 	:Lizenz:
 		Dieses Dokument wird unter der Open Content License, siehe
@@ -52,15 +49,8 @@
 	**Inhaltsverzeichnis**
 
 .. toctree::
-	:maxdepth: 5
-	:titlesonly:
-	:glob:
 
-..	Introduction/Index
-..	UserManual/Index
-..	AdministratorManual/Index
-..	Configuration/Index
-..	DeveloperCorner/Index
-..	KnownProblems/Index
-..	ToDoList/Index
-..	ChangeLog/Index
+	Introduction/Index
+	User/Index
+	Developer/Index
+	ChangeLog/Index

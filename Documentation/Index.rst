@@ -25,9 +25,6 @@ No CAPTCHA reCAPTCHA
 	:Description:
 		Use "No CAPTCHA reCAPTCHA" in your TYPO3 extension.
 
-	:Keywords:
-		comma,separated,list,of,keywords
-
 	:Copyright:
 		2015
 
@@ -50,16 +47,8 @@ No CAPTCHA reCAPTCHA
 	**Table of Contents**
 
 .. toctree::
-	:maxdepth: 5
-	:titlesonly:
-	:glob:
 
 	Introduction/Index
 	User/Index
-	Administrator/Index
-	Configuration/Index
 	Developer/Index
-	KnownProblems/Index
-	ToDoList/Index
 	ChangeLog/Index
-	Targets
