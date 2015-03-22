@@ -9,7 +9,7 @@
 ---
 conf.py:
   copyright: 2015
-  project: Captcha Library
+  project: No CAPTCHA reCAPTCHA
   version: 1.0.0
   release: 1.0.0
   intersphinx_mapping:
@@ -19,7 +19,7 @@ conf.py:
   latex_documents:
   - - Index
     - jh_captcha.tex
-    - Captcha Library
+    - No CAPTCHA reCAPTCHA
     - Jan Haffner
     - manual
   latex_elements:

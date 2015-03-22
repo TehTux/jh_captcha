@@ -6,7 +6,7 @@
         "backendModules": [
 
         ],
-        "description": "Library for Google reCaptcha",
+        "description": "Use \"No CAPTCHA reCAPTCHA\" in your TYPO3 extension.",
         "emConf": {
             "category": "misc",
             "custom_category": "",
@@ -14,12 +14,12 @@
             "disableLocalization": false,
             "disableVersioning": false,
             "sourceLanguage": "en",
-            "state": "alpha",
+            "state": "stable",
             "targetVersion": "6.2",
             "version": "1.0.0"
         },
         "extensionKey": "jh_captcha",
-        "name": "Captcha Library",
+        "name": "No CAPTCHA reCAPTCHA",
         "originalExtensionKey": "jh_captcha",
         "persons": [
             {
@@ -38,7 +38,7 @@
 
     ],
     "log": {
-        "last_modified": "2015-02-25 11:56",
+        "last_modified": "2015-03-22 08:12",
         "extension_builder_version": "6.2.0",
         "be_user": " (1)"
     }

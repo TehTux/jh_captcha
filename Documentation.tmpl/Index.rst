@@ -8,7 +8,7 @@
 .. _start:
 
 =============================================================
-Captcha Library
+No CAPTCHA reCAPTCHA
 =============================================================
 
 .. only:: html
@@ -23,7 +23,7 @@ Captcha Library
 		en
 
 	:Description:
-		Library for Google reCaptcha
+		Use "No CAPTCHA reCAPTCHA" in your TYPO3 extension.
 
 	:Keywords:
 		comma,separated,list,of,keywords
