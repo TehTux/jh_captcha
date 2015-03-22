@@ -16,6 +16,8 @@ plugin.tx_jhcaptcha {
             lang = en
             # Description: Register API Key at https://www.google.com/recaptcha/admin
             siteKey =
+            # Description: Register API Key at https://www.google.com/recaptcha/admin
+            secretKey =
         }
     }
 }
