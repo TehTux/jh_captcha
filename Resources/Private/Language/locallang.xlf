@@ -3,6 +3,24 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2015-02-25T23:56:50Z" product-name="jh_captcha">
 		<header/>
 		<body>
+            <trans-unit id="setApiKey">
+                <source>Set API Key! See https://www.google.com/recaptcha/admin</source>
+            </trans-unit>
+            <trans-unit id="missingInputSecret">
+                <source>The secret parameter is missing.</source>
+            </trans-unit>
+            <trans-unit id="invalidInputSecret">
+                <source>The secret parameter is invalid or malformed.</source>
+            </trans-unit>
+            <trans-unit id="missingInputResponse">
+                <source>The response parameter is missing.</source>
+            </trans-unit>
+            <trans-unit id="invalidInputResponse">
+                <source>The response parameter is invalid or malformed.</source>
+            </trans-unit>
+            <trans-unit id="defaultError">
+                <source>The Captcha is invalid.</source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

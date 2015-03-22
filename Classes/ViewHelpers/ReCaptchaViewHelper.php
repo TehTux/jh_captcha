@@ -24,13 +24,13 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
         $lang = $settings['reCaptcha']['lang'];
 
         $reCaptchaApi = '<script src="https://www.google.com/recaptcha/api.js?hl='.$lang.'" async defer></script>';
-        $callBack = '<script>var captchaCallback = function() { document.getElementById("captchaResponse").value = document.getElementById("g-recaptcha-response").value }</script>';
+        $callBack = '<script type="text/javascript">var captchaCallback = function() { document.getElementById("captchaResponse").value = document.getElementById("g-recaptcha-response").value }</script>';
         $reCaptcha = '<div class="g-recaptcha" data-sitekey="'.$siteKey.'" data-theme="'.$theme.'" data-callback="captchaCallback" data-type="'.$type.'"></div>';
 
         if($siteKey) {
             return $reCaptchaApi.$callBack.$reCaptcha;
         } else {
-            return 'Set API Key! See https://www.google.com/recaptcha/admin';
+            return \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('setApiKey', NULL, NULL);
         }
     }
 }
