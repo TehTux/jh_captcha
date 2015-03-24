@@ -23,7 +23,7 @@ No CAPTCHA reCAPTCHA
 		en
 
 	:Description:
-		Use "No CAPTCHA reCAPTCHA" in your TYPO3 extension.
+		Use No CAPTCHA reCAPTCHA in your TYPO3 extension.
 
 	:Copyright:
 		2015

@@ -24,7 +24,7 @@ No CAPTCHA reCAPTCHA
 		de
 
 	:Beschreibung:
-		Benutze "No CAPTCHA reCAPTCHA" in deiner TYPO3 extension.
+		Benutze No CAPTCHA reCAPTCHA in deiner TYPO3 extension.
 
 	:Copyright:
 		2015
