@@ -10,3 +10,9 @@
 
 ChangeLog
 =========
+
+1.0.1
+^^^^^
+
+* Extension description changed
+* Bug fix: https://forge.typo3.org/issues/65968

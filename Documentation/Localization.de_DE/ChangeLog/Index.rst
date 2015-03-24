@@ -10,3 +10,9 @@
 
 Änderungshistorie
 =================
+
+1.0.1
+^^^^^
+
+* Beschreibung der Erweiterung bearbeitet
+* Fehler behoben: https://forge.typo3.org/issues/65968
