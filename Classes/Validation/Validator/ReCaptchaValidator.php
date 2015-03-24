@@ -28,7 +28,7 @@ class ReCaptchaValidator extends \TYPO3\CMS\Extbase\Validation\Validator\Abstrac
         $settings = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'JhCaptcha');
         $secret = $settings['reCaptcha']['secretKey'];
         $url = 'https://www.google.com/recaptcha/api/siteverify';
-        $apiResponse = json_decode(file_get_contents($url.'?secret='.$secret.'&response='.$value), true);
+        $apiResponse = json_decode(\TYPO3\CMS\Core\Utility\GeneralUtility::getUrl($url.'?secret='.$secret.'&response='.$value), true);
         if($apiResponse['success'] == FALSE) {
             foreach($apiResponse['error-codes'] as $errorCode) {
                 switch($errorCode) {
