@@ -6,17 +6,17 @@
         "backendModules": [
 
         ],
-        "description": "Use \"No CAPTCHA reCAPTCHA\" in your TYPO3 extension.",
+        "description": "Use No CAPTCHA reCAPTCHA in your TYPO3 extension.",
         "emConf": {
             "category": "misc",
             "custom_category": "",
-            "dependsOn": "typo3 => 6.2\n",
+            "dependsOn": "typo3 => 6.2.0-6.2.99\n",
             "disableLocalization": false,
             "disableVersioning": false,
             "sourceLanguage": "en",
             "state": "stable",
             "targetVersion": "6.2",
-            "version": "1.0.0"
+            "version": "1.0.1"
         },
         "extensionKey": "jh_captcha",
         "name": "No CAPTCHA reCAPTCHA",
@@ -38,7 +38,7 @@
 
     ],
     "log": {
-        "last_modified": "2015-03-22 08:12",
+        "last_modified": "2015-03-24 03:40",
         "extension_builder_version": "6.2.0",
         "be_user": " (1)"
     }
