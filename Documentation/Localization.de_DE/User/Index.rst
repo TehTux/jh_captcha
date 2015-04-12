@@ -14,8 +14,7 @@ Benutzer Handbuch
 Erforderliche Konfiguration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1) Du musst deine Seite registrieren um ein API-Schlüsselpaar für reCAPTCHA zu erhalten:
-http://www.google.com/recaptcha/admin
+1) Du musst deine Seite registrieren um ein API-Schlüsselpaar für reCAPTCHA zu erhalten: http://www.google.com/recaptcha/admin
 
 2) Trage diese Schlüssel in TypoScript ein:
 

@@ -14,8 +14,7 @@ Users Manual
 Required Configuration
 ^^^^^^^^^^^^^^^^^^^^^^
 
-1) To use reCAPTCHA, you need to sign up for an API key pair for your site:
-http://www.google.com/recaptcha/admin
+1) To use reCAPTCHA, you need to sign up for an API key pair for your site: http://www.google.com/recaptcha/admin
 
 2) Set your API key pair in TypoScript:
 
