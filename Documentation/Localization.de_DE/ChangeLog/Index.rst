@@ -11,6 +11,13 @@
 Änderungshistorie
 =================
 
+1.0.2
+^^^^^
+
+* Fehler behoben: https://forge.typo3.org/issues/66010
+* Korrekturen in deutscher Dokumentation
+* Kategorie der Erweiterung auf "Frontend" geändert
+
 1.0.1
 ^^^^^
 

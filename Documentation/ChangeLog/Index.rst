@@ -11,6 +11,13 @@
 ChangeLog
 =========
 
+1.0.2
+^^^^^
+
+* Bug fix: https://forge.typo3.org/issues/66010
+* Corrections in German documentation
+* Extension category changed to "Frontend"
+
 1.0.1
 ^^^^^
 

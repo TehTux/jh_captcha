@@ -16,7 +16,7 @@
             "sourceLanguage": "en",
             "state": "stable",
             "targetVersion": "6.2",
-            "version": "1.0.1"
+            "version": "1.0.2"
         },
         "extensionKey": "jh_captcha",
         "name": "No CAPTCHA reCAPTCHA",
@@ -38,7 +38,7 @@
 
     ],
     "log": {
-        "last_modified": "2015-03-24 03:40",
+        "last_modified": "2015-04-12 06:21",
         "extension_builder_version": "6.2.0",
         "be_user": " (1)"
     }
