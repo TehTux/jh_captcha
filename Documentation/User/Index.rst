@@ -20,6 +20,7 @@ Required Configuration
 
 .. code-block:: typoscript
     :linenos:
+    :emphasize-lines: 4, 5
 
     plugin.tx_jhcaptcha {
         settings {
@@ -36,6 +37,7 @@ Optional Configuration
 
 .. code-block:: typoscript
     :linenos:
+    :emphasize-lines: 7, 11, 15
 
     plugin.tx_jhcaptcha {
         settings {
