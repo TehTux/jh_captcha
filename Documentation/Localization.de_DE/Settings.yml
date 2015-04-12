@@ -8,8 +8,8 @@
 
 ---
 conf.py:
-  copyright: 2012-2013
-  project: Extension Name (Deutsch)
+  copyright: 2015
+  project: No CAPTCHA reCAPTCHA
   version: 1.0.1
   release: 1.0.1
   intersphinx_mapping:
@@ -18,12 +18,12 @@ conf.py:
     - null
   latex_documents:
   - - Index
-    - <extension_key>.tex
-    - Extension Name (Français)
-    - Your Name
+    - jh_captcha.tex
+    - No CAPTCHA reCAPTCHA
+    - Jan Haffner
     - manual
   latex_elements:
     papersize: a4paper
     pointsize: 10pt
-    preamble: \usepackage{typo3}
+    preamble: \usepackage
 ...
