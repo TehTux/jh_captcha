@@ -8,7 +8,7 @@
         ],
         "description": "Use No CAPTCHA reCAPTCHA in your TYPO3 extension.",
         "emConf": {
-            "category": "misc",
+            "category": "fe",
             "custom_category": "",
             "dependsOn": "typo3 => 6.2.0-6.2.99\n",
             "disableLocalization": false,

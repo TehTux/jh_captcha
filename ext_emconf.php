@@ -13,7 +13,7 @@
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'No CAPTCHA reCAPTCHA',
 	'description' => 'Use No CAPTCHA reCAPTCHA in your TYPO3 extension.',
-	'category' => 'misc',
+	'category' => 'fe',
 	'author' => 'Jan Haffner',
 	'author_email' => 'info@jan-haffner.de',
 	'state' => 'stable',
