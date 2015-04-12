@@ -19,6 +19,7 @@ Required Configuration
 2) Set your API key pair in TypoScript:
 
 .. code-block:: typoscript
+    :linenos:
 
     plugin.tx_jhcaptcha {
         settings {
@@ -34,6 +35,7 @@ Optional Configuration
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: typoscript
+    :linenos:
 
     plugin.tx_jhcaptcha {
         settings {

@@ -17,6 +17,7 @@ Füge das Captcha zu deinem domain model hinzu
 Füge dieses Feld deiner domain model Klasse hinzu:
 
 .. code-block:: php
+    :linenos:
 
     /**
      * @var string
@@ -27,6 +28,7 @@ Füge dieses Feld deiner domain model Klasse hinzu:
 und getter und setter Funktionen:
 
 .. code-block:: php
+    :linenos:
 
     /**
      * Sets the captchaResponse
@@ -51,6 +53,7 @@ Füge das Captcha zu deinem Fluid template hinzu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: fluid
+    :linenos:
 
     {namespace jhcaptcha = Haffner\JhCaptcha\ViewHelpers}
 

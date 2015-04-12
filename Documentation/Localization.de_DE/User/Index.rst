@@ -19,6 +19,7 @@ Erforderliche Konfiguration
 2) Trage diese Schlüssel in TypoScript ein:
 
 .. code-block:: typoscript
+    :linenos:
 
     plugin.tx_jhcaptcha {
         settings {
@@ -34,6 +35,7 @@ Optionale Konfiguration
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: typoscript
+    :linenos:
 
     plugin.tx_jhcaptcha {
         settings {
