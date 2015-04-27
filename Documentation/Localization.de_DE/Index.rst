@@ -24,7 +24,7 @@ No CAPTCHA reCAPTCHA
 		de
 
 	:Beschreibung:
-		Benutze No CAPTCHA reCAPTCHA in deiner TYPO3 Erweiterung.
+		Diese Erweiterung bietet die Möglichkeit das "No CAPTCHA reCAPTCHA" von Google in TYPO3-Erweiterungen als Spam-Schutz zu nutzen. Außerdem kann diese Erweiterung einfach in powermail Formularen genutzt werden.
 
 	:Copyright:
 		2015

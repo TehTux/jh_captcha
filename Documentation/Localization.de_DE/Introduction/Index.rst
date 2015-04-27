@@ -17,5 +17,12 @@ Einführung
 Was macht diese Erweiterung?
 ----------------------------
 
-Diese Extension bietet die Möglichkeit das "No CAPTCHA reCAPTCHA" von Google in TYPO3-Extensions zu nutzen.
-Du kannst Bugs und Feature-Vorschläge hier melden: https://forge.typo3.org/projects/extension-jh_captcha/issues/new
+Diese Erweiterung bietet die Möglichkeit das "No CAPTCHA reCAPTCHA"
+von Google in TYPO3-Erweiterungen als Spam-Schutz zu nutzen.
+Außerdem kann diese Erweiterung einfach in powermail Formularen genutzt werden.
+
+Bugs und Feature-Vorschläge
+---------------------------
+
+Du kannst Bugs und Feature-Vorschläge hier melden:
+https://forge.typo3.org/projects/extension-jh_captcha/issues/new

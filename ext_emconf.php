@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'No CAPTCHA reCAPTCHA',
-	'description' => 'Use No CAPTCHA reCAPTCHA in your TYPO3 extension.',
+	'description' => 'With this extension you can use "No CAPTCHA reCAPTCHA" from Google in your own TYPO3 extensions as spam protection. Moreover, this extension can be easily used in powermail forms.',
 	'category' => 'fe',
 	'author' => 'Jan Haffner',
 	'author_email' => 'info@jan-haffner.de',
