@@ -65,7 +65,7 @@ The reCAPTCHA can easy be used in the `extension powermail`_. The following step
 
 .. _extension powermail: http://typo3.org/extensions/repository/view/powermail
 
-.. important::
+.. note::
 
     Note that the usage has only been tested in the powermail versions 2.2.0-2.3.1!
 

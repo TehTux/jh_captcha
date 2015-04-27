@@ -11,6 +11,13 @@
 Änderungshistorie
 =================
 
+1.1.0
+^^^^^
+
+* Unterstützung für powermail: https://forge.typo3.org/issues/66301
+* Unterstützung für TYPO3 CMS 7.1.x
+* Überarbeitung der Dokumentation
+
 1.0.2
 ^^^^^
 

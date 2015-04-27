@@ -66,7 +66,7 @@ Folgende Schritte sind dafür notwendig:
 
 .. _Erweiterung Powermail: http://typo3.org/extensions/repository/view/powermail
 
-.. important::
+.. note::
 
     Bitte beachte, dass die Verwendung nur in den Powermail Versionen 2.2.0-2.3.1 getestet wurde!
 

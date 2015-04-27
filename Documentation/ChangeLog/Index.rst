@@ -11,6 +11,13 @@
 ChangeLog
 =========
 
+1.1.0
+^^^^^
+
+* Support for powermail: https://forge.typo3.org/issues/66301
+* Support for TYPO3 CMS 7.1.x
+* Revised documentation
+
 1.0.2
 ^^^^^
 
