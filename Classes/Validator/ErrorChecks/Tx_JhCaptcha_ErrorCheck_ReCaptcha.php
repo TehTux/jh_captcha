@@ -3,10 +3,10 @@
 namespace Haffner\JhCaptcha\Validation\Validator\ErrorCheck;
 
 /**
- * Class ReCaptchaErrorCheck
+ * Class Tx_JhCaptcha_ErrorCheck_ReCaptcha
  * EXT:formhandler ErrorCheck for ReCaptcha
  */
-class ReCaptchaErrorCheck extends Tx_Formhandler_AbstractErrorCheck {
+class Tx_JhCaptcha_ErrorCheck_ReCaptcha extends Tx_Formhandler_AbstractErrorCheck {
 
     /**
      * @var |Haffner\JhCaptcha\Validation\Validator\ReCaptchaValidator
