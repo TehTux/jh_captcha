@@ -112,3 +112,20 @@ Jetzt kannst du das reCAPTCHA in deinem Formular verwenden.
 .. image:: ../Images/Powermail/Form2.jpg
 
 Jetzt ist das reCAPTCHA einsatzbereit!
+
+Verwendung in Formhandler
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Das reCAPTCHA kann leicht in der `Erweiterung Formhandler`_ verwendet werden.
+Folgende Schritte sind dafür notwendig:
+
+.. _Erweiterung Formhandler: http://typo3.org/extensions/repository/view/formhandler
+
+.. note::
+
+    Bitte beachte, dass die Verwendung nur in den Formhandler Versionen XXX-YYY getestet wurde!
+
+1. Blablaba
+-----------
+
+
