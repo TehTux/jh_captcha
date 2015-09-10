@@ -8,7 +8,7 @@
 .. _start:
 
 =============================================================
-No CAPTCHA reCAPTCHA
+Google reCAPTCHA v2.0
 =============================================================
 
 .. only:: html
@@ -23,7 +23,7 @@ No CAPTCHA reCAPTCHA
 		en
 
 	:Description:
-		With this extension you can use "No CAPTCHA reCAPTCHA" from Google in your own TYPO3 extensions as spam protection. Moreover, this extension can be easily used in powermail forms.
+		With this extension you can use reCAPTCHA v2.0 from Google in your own TYPO3 extensions as spam protection. Moreover, this extension can be easily used in powermail forms.
 
 	:Copyright:
 		2015
