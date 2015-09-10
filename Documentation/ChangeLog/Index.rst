@@ -11,6 +11,12 @@
 ChangeLog
 =========
 
+1.1.1
+^^^^^
+
+* Support for TYPO3 CMS 7.4.x
+* Revised documentation
+
 1.1.0
 ^^^^^
 
