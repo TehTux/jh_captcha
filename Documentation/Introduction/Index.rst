@@ -21,6 +21,8 @@ With this extension you can use reCAPTCHA v2.0 from Google
 in your own TYPO3 extensions as spam protection.
 Moreover, this extension can be easily used in powermail forms.
 
+.. youtube:: jwslDn3ImM0
+
 Bugs und Feature requests
 -------------------------
 

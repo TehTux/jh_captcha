@@ -12,6 +12,15 @@ conf.py:
   project: Google reCAPTCHA v2.0
   version: 1.1.0
   release: 1.1.0
+  extensions:
+    - sphinx.ext.intersphinx
+    - t3sphinx.ext.t3extras
+    - t3sphinx.ext.t3tablerows
+    - t3sphinx.ext.targets
+    - sphinxcontrib.googlechart
+    - sphinxcontrib.googlemaps
+    - sphinxcontrib.slide
+    - sphinxcontrib.youtube
   intersphinx_mapping:
     t3tsref:
     - http://docs.typo3.org/typo3cms/TyposcriptReference/
