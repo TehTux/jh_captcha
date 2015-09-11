@@ -67,7 +67,7 @@ The reCAPTCHA can easy be used in the `extension powermail`_. The following step
 
 .. note::
 
-    Note that the usage has only been tested in the powermail versions 2.2.0-2.3.1!
+    Note that the usage has only been tested in the powermail versions 2.2.0-2.10.0!
 
 1. Page-TSconfig
 ----------------

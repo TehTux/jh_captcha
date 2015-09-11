@@ -9,9 +9,18 @@
 ---
 conf.py:
   copyright: 2015
-  project: No CAPTCHA reCAPTCHA
-  version: 1.1.0
-  release: 1.1.0
+  project: Google reCAPTCHA v2.0
+  version: 1.1.1
+  release: 1.1.1
+  extensions:
+    - sphinx.ext.intersphinx
+    - t3sphinx.ext.t3extras
+    - t3sphinx.ext.t3tablerows
+    - t3sphinx.ext.targets
+    - sphinxcontrib.googlechart
+    - sphinxcontrib.googlemaps
+    - sphinxcontrib.slide
+    - sphinxcontrib.youtube
   intersphinx_mapping:
     t3tsref:
     - http://docs.typo3.org/typo3cms/TyposcriptReference/
@@ -19,7 +28,7 @@ conf.py:
   latex_documents:
   - - Index
     - jh_captcha.tex
-    - No CAPTCHA reCAPTCHA
+    - reCAPTCHA v2.0
     - Jan Haffner
     - manual
   latex_elements:

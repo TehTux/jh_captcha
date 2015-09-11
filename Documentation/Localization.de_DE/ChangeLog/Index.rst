@@ -11,6 +11,12 @@
 Änderungshistorie
 =================
 
+1.1.1
+^^^^^
+
+* Unterstützung für TYPO3 CMS 7.4.x
+* Überarbeitung der Dokumentation
+
 1.1.0
 ^^^^^
 
