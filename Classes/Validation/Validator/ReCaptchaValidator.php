@@ -4,19 +4,6 @@ namespace Haffner\JhCaptcha\Validation\Validator;
 class ReCaptchaValidator extends \TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator {
 
     /**
-     * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
-     */
-    protected $configurationManager;
-
-    /**
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
-     * @return void
-     */
-    public function injectConfigurationManager(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager) {
-        $this->configurationManager = $configurationManager;
-    }
-
-    /**
      * Check if $value is valid. If it is not valid, needs to add an error
      * to Result.
      *
@@ -25,8 +12,12 @@ class ReCaptchaValidator extends \TYPO3\CMS\Extbase\Validation\Validator\Abstrac
      */
     protected function isValid($value) {
         $extensionName = 'jh_captcha';
-        $settings = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'JhCaptcha');
+        $objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+        $configurationManager = $objectManager->get('TYPO3\\CMS\\Extbase\\Configuration\\ConfigurationManagerInterface');
+        $settings = $configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'jhcaptcha');
+        \TYPO3\CMS\Core\Utility\DebugUtility::debug($settings);
         $secret = $settings['reCaptcha']['secretKey'];
+        $this->addError(implode($settings), 1426877005);
         $url = 'https://www.google.com/recaptcha/api/siteverify';
         $apiResponse = json_decode(\TYPO3\CMS\Core\Utility\GeneralUtility::getUrl($url.'?secret='.$secret.'&response='.$value), true);
         if($apiResponse['success'] == FALSE) {
