@@ -171,8 +171,8 @@ Then the validators need to be assigned to the captcha field:
     }
     [...]
 
-4. Sprachdatei
---------------
+4. Language file
+----------------
 
 Finally, the label and the error messages must be defined. Example:
 
@@ -180,7 +180,7 @@ Finally, the label and the error messages must be defined. Example:
     :linenos:
 
     <label index="jh_captcha_recaptcha">reCAPTCHA</label>
-    <label index="error_jh_captcha_recaptcha_required">reCAPTCHA ist ein Pflichtfeld.</label>
-    <label index="error_jh_captcha_recaptcha_Tx_JhCaptcha_ErrorCheck_ReCaptcha">Fehler beim Validieren des reCAPTCHA.</label>
+    <label index="error_jh_captcha_recaptcha_required">reCAPTCHA is a mandatory field.</label>
+    <label index="error_jh_captcha_recaptcha_Tx_JhCaptcha_ErrorCheck_ReCaptcha">reCAPTCHA validation error</label>
 
 Now the reCAPTCHA is ready!
