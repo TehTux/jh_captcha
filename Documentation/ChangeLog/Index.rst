@@ -11,6 +11,11 @@
 ChangeLog
 =========
 
+1.2.0
+^^^^^
+
+* Support for formhandler: https://forge.typo3.org/issues/66829
+
 1.1.1
 ^^^^^
 

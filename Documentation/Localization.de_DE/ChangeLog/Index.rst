@@ -11,6 +11,11 @@
 Änderungshistorie
 =================
 
+1.2.0
+^^^^^
+
+* Unterstützung für formhandler: https://forge.typo3.org/issues/66829
+
 1.1.1
 ^^^^^
 
