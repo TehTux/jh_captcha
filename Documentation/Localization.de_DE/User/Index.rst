@@ -123,9 +123,65 @@ Folgende Schritte sind dafür notwendig:
 
 .. note::
 
-    Bitte beachte, dass die Verwendung nur in den Formhandler Versionen XXX-YYY getestet wurde!
+    Bitte beachte, dass die Verwendung nur in den Formhandler Versionen 2.0.x getestet wurde!
 
-1. Blablaba
+1. Mastertemplate
+-----------------
+
+Zuerst muss das Captcha im Mastertemplate aufgenommen werden. Beispiel:
+
+.. code-block:: html
+    :linenos:
+
+    <!-- ###master_spamprotection-jh_captcha_recaptcha### -->
+    <div class="row">
+    	<div class="large-3 columns">
+    		<label class="###is_error_jh_captcha_recaptcha###">###LLL:jh_captcha_recaptcha### ###required_jh_captcha_recaptcha###</label>
+    	</div>
+    	<div class="large-9 columns">
+    		###jh_captcha_recaptcha###
+    		###error_jh_captcha_recaptcha###
+    	</div>
+    </div>
+    <!-- ###master_spamprotection-jh_captcha_recaptcha### -->
+
+2. Template
 -----------
 
+Jetzt kann der Marker im Formular-Template verwendet werden:
 
+.. code-block:: html
+    :linenos:
+
+    ###master_spamprotection-jh_captcha_recaptcha###
+
+3. TypoScript
+-------------
+
+Danach müssen die Validatoren für das Captcha-Feld zugewiesen werden:
+
+.. code-block:: typoscript
+    :linenos:
+
+    [...]
+    validators.1.config.fieldConf {
+        jh_captcha_recaptcha.errorCheck {
+            1 = required
+            2 = Tx_JhCaptcha_ErrorCheck_ReCaptcha
+        }
+    }
+    [...]
+
+4. Sprachdatei
+--------------
+
+Zum Schluss muss noch das Label sowie die Fehlermeldungen definiert werden. Beispiel:
+
+.. code-block:: xml
+    :linenos:
+
+    <label index="jh_captcha_recaptcha">reCAPTCHA</label>
+    <label index="error_jh_captcha_recaptcha_required">reCAPTCHA ist ein Pflichtfeld.</label>
+    <label index="error_jh_captcha_recaptcha_Tx_JhCaptcha_ErrorCheck_ReCaptcha">Fehler beim Validieren des reCAPTCHA.</label>
+
+Anschließend ist das reCAPTCHA einsatzbereit.
