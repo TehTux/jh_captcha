@@ -19,7 +19,7 @@ Was macht diese Erweiterung?
 
 Diese Erweiterung bietet die Möglichkeit das reCAPTCHA v2.0
 von Google in TYPO3-Erweiterungen als Spam-Schutz zu nutzen.
-Außerdem kann diese Erweiterung einfach in powermail Formularen genutzt werden.
+Außerdem kann diese Erweiterung einfach in powermail und formhandler Formularen genutzt werden.
 
 .. youtube:: https://www.youtube.com/watch?v=jwslDn3ImM0
 

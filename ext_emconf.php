@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Google reCAPTCHA v2.0',
-	'description' => 'With this extension you can use reCAPTCHA v2.0 from Google in your own TYPO3 extensions as spam protection. Moreover, this extension can be easily used in powermail forms.',
+	'description' => 'With this extension you can use reCAPTCHA v2.0 from Google in your own TYPO3 extensions as spam protection. Moreover, this extension can be easily used in powermail and formhandler forms.',
 	'category' => 'fe',
 	'author' => 'Jan Haffner',
 	'author_email' => 'info@jan-haffner.de',
