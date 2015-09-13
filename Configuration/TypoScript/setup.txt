@@ -2,11 +2,11 @@
 plugin.tx_jhcaptcha {
     settings {
         reCaptcha {
-            theme = {$plugin.tx_jhcaptcha.settings.theme}
-            type = {$plugin.tx_jhcaptcha.settings.type}
-            lang = {$plugin.tx_jhcaptcha.settings.lang}
-            siteKey = {$plugin.tx_jhcaptcha.settings.siteKey}
-            secretKey = {$plugin.tx_jhcaptcha.settings.secretKey}
+            theme = {$plugin.tx_jhcaptcha.settings.reCaptcha.theme}
+            type = {$plugin.tx_jhcaptcha.settings.reCaptcha.type}
+            lang = {$plugin.tx_jhcaptcha.settings.reCaptcha.lang}
+            siteKey = {$plugin.tx_jhcaptcha.settings.reCaptcha.siteKey}
+            secretKey = {$plugin.tx_jhcaptcha.settings.reCaptcha.secretKey}
         }
     }
 }
