@@ -2,21 +2,15 @@
 plugin.tx_jhcaptcha {
     settings {
         reCaptcha {
-            # Description: The color theme of the widget
-            # Options: dark | light
-            # Default: light
+            # cat=plugin.tx_jhcaptcha/recaptcha; type=options[dark,light]; label=The color theme of the widget
             theme = light
-            # Description: The type of CAPTCHA to serve.
-            # Options: audio | image
-            # Default: image
+            # cat=plugin.tx_jhcaptcha/recaptcha; type=options[audio,image]; label=The type of CAPTCHA to serve
             type = image
-            # Description: The language of the widget
-            # Options: https://developers.google.com/recaptcha/docs/language
-            # Default: en
+            # cat=plugin.tx_jhcaptcha/recaptcha; type=string; label=The language of the widget: See https://developers.google.com/recaptcha/docs/language
             lang = en
-            # Description: Register API Key at https://www.google.com/recaptcha/admin
+            # cat=plugin.tx_jhcaptcha/recaptcha; type=string; label=Site key: See https://www.google.com/recaptcha/admin
             siteKey =
-            # Description: Register API Key at https://www.google.com/recaptcha/admin
+            # cat=plugin.tx_jhcaptcha/recaptcha; type=string; label=Secret key: See https://www.google.com/recaptcha/admin
             secretKey =
         }
     }
