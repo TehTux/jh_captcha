@@ -14,6 +14,13 @@ ChangeLog
 1.2.x
 -----
 
+1.2.1
+^^^^^
+
+* Support for TYPO3 CMS 7.6.x
+* Revised documentation
+* Comments for Constant Editor added
+
 1.2.0
 ^^^^^
 

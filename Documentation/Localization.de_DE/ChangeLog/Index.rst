@@ -14,6 +14,13 @@
 1.2.x
 -----
 
+1.2.1
+^^^^^
+
+* Unterstützung für TYPO3 CMS 7.6.x
+* Überarbeitung der Dokumentation
+* Kommentare für Konstanten-Editor hinzugefügt
+
 1.2.0
 ^^^^^
 
