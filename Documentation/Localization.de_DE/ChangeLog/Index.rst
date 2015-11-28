@@ -11,10 +11,16 @@
 Änderungshistorie
 =================
 
+1.2.x
+-----
+
 1.2.0
 ^^^^^
 
 * Unterstützung für formhandler: https://forge.typo3.org/issues/66829
+
+1.1.x
+-----
 
 1.1.1
 ^^^^^
@@ -28,6 +34,9 @@
 * Unterstützung für powermail: https://forge.typo3.org/issues/66301
 * Unterstützung für TYPO3 CMS 7.1.x
 * Überarbeitung der Dokumentation
+
+1.0.x
+-----
 
 1.0.2
 ^^^^^

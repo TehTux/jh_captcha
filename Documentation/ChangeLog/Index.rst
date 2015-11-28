@@ -11,10 +11,16 @@
 ChangeLog
 =========
 
+1.2.x
+-----
+
 1.2.0
 ^^^^^
 
 * Support for formhandler: https://forge.typo3.org/issues/66829
+
+1.1.x
+-----
 
 1.1.1
 ^^^^^
@@ -28,6 +34,9 @@ ChangeLog
 * Support for powermail: https://forge.typo3.org/issues/66301
 * Support for TYPO3 CMS 7.1.x
 * Revised documentation
+
+1.0.x
+-----
 
 1.0.2
 ^^^^^
