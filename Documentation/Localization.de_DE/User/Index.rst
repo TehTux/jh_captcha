@@ -37,7 +37,7 @@ Optionale Konfiguration
 
 .. code-block:: typoscript
     :linenos:
-    :emphasize-lines: 7, 11, 15
+    :emphasize-lines: 7, 11, 15, 19
 
     plugin.tx_jhcaptcha {
         settings {
@@ -54,6 +54,10 @@ Optionale Konfiguration
                 # Optionen: https://developers.google.com/recaptcha/docs/language
                 # Standard: en
                 lang = en
+                # Beschreibung: Die Größe des Captchas
+                # Optionen: normal | compact
+                # Standard: normal
+                size = normal
             }
         }
     }

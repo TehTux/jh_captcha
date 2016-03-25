@@ -8,6 +8,8 @@ plugin.tx_jhcaptcha {
             type = image
             # cat=plugin.tx_jhcaptcha/recaptcha; type=string; label=The language of the widget: See https://developers.google.com/recaptcha/docs/language
             lang = en
+            # cat=plugin.tx_jhcaptcha/recaptcha; type=options[normal,compact]; label=The size of the widget
+            size = normal
             # cat=plugin.tx_jhcaptcha/recaptcha; type=string; label=Site key: See https://www.google.com/recaptcha/admin
             siteKey =
             # cat=plugin.tx_jhcaptcha/recaptcha; type=string; label=Secret key: See https://www.google.com/recaptcha/admin
