@@ -72,7 +72,7 @@ Folgende Schritte sind dafür notwendig:
 
 .. note::
 
-    Bitte beachte, dass die Verwendung nur in den Powermail Versionen 2.2.0-2.18.0 getestet wurde!
+    Bitte beachte, dass die Verwendung nur in den Powermail Versionen 2.2.0 - 2.25.0 getestet wurde!
     Höchstwahrscheinlich läuft es auch mit neueren Versionen.
 
 1. Seiten-TSconfig
