@@ -27,7 +27,7 @@ Google reCAPTCHA v2.0
 		Diese Erweiterung bietet die Möglichkeit das reCAPTCHA v2.0 von Google in TYPO3-Erweiterungen als Spam-Schutz zu nutzen. Außerdem kann diese Erweiterung einfach in powermail und formhandler Formularen genutzt werden.
 
 	:Copyright:
-		2015
+		2015-2016
 
 	:Autor:
 		Jan Haffner

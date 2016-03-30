@@ -1,7 +1,7 @@
 {
   "name": "haffner/jh_captcha",
   "description": "With this extension you can use reCAPTCHA v2.0 from Google in your own TYPO3 extensions as spam protection. Moreover, this extension can be easily used in powermail and formhandler forms.",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "type": "typo3-cms-extension",
   "keywords": ["TYPO3 CMS", "jh_captcha", "Captcha", "reCAPTCHA"],
   "authors": [

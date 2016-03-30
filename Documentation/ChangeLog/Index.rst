@@ -11,6 +11,15 @@
 ChangeLog
 =========
 
+1.3.x
+-----
+
+1.3.0
+^^^^^
+
+* reCAPTCHA data-size attribute added: https://forge.typo3.org/issues/73642
+* composer.json added: https://forge.typo3.org/issues/72675#note-3
+
 1.2.x
 -----
 

@@ -11,6 +11,15 @@
 Änderungshistorie
 =================
 
+1.3.x
+-----
+
+1.3.0
+^^^^^
+
+* reCAPTCHA um Attribut data-size ergänzt: https://forge.typo3.org/issues/73642
+* composer.json hinzugefügt: https://forge.typo3.org/issues/72675#note-3
+
 1.2.x
 -----
 
