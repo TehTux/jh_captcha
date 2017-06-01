@@ -129,9 +129,7 @@ Folgende Schritte sind dafür notwendig:
 
 .. note::
 
-    Bitte beachte, dass die Verwendung nur in den Formhandler Versionen 2.0 und 2.3 - 2.4 getestet wurde!
-    Versionen 2.1 und 2.2 funktionieren nicht, weil es dort einen Bug im error check gibt
-    (behoben mit 2.3 http://www.typo3-formhandler.com/footer/history/release-notes/version-230/ )!
+    Bitte beachte, dass die Verwendung nur in den Formhandler Versionen 2.3 - 2.4 getestet wurde!
     Höchstwahrscheinlich läuft es auch mit neueren Versionen.
 
 1. Mastertemplate
@@ -168,22 +166,6 @@ Jetzt kann der Marker im Formular-Template verwendet werden:
 -------------
 
 Danach müssen die Validatoren für das Captcha-Feld zugewiesen werden:
-
-Formhandler 2.0:
-
-.. code-block:: typoscript
-    :linenos:
-
-    [...]
-    validators.1.config.fieldConf {
-        jh_captcha_recaptcha.errorCheck {
-            1 = required
-            2 = Tx_JhCaptcha_ErrorCheck_ReCaptcha
-        }
-    }
-    [...]
-
-Formhandler 2.3 - 2.4:
 
 .. code-block:: typoscript
     :linenos:
