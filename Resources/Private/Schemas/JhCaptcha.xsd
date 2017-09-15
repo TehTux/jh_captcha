@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://typo3.org/ns/Haffner/JhCaptcha/ViewHelpers"><xsd:element name="reCaptcha"><xsd:annotation><xsd:documentation><![CDATA[]]></xsd:documentation></xsd:annotation><xsd:complexType mixed="true"><xsd:sequence><xsd:any minOccurs="0" maxOccurs="unbounded"/></xsd:sequence></xsd:complexType></xsd:element></xsd:schema>
