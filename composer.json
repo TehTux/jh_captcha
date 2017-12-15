@@ -16,6 +16,11 @@
     "issues": "https://github.com/TehTux/jh_captcha/issues",
     "docs": "https://docs.typo3.org/typo3cms/extensions/jh_captcha/"
   },
+  "extra": {
+    "branch-alias": {
+      "dev-develop": "2.0.x-dev"
+    }
+  },
   "require": {
     "typo3/cms-core": ">=7.6.0,<9.0"
   },
