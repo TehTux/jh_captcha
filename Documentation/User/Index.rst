@@ -46,10 +46,6 @@ Optional Configuration
                 # Options: dark | light
                 # Default: light
                 theme = light
-                # Description: The type of CAPTCHA to serve
-                # Options: audio | image
-                # Default: image
-                type = image
                 # Description: The language of the widget
                 # Options: https://developers.google.com/recaptcha/docs/language
                 # Default: en

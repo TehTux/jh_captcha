@@ -3,7 +3,6 @@ plugin.tx_jhcaptcha {
     settings {
         reCaptcha {
             theme = {$plugin.tx_jhcaptcha.settings.reCaptcha.theme}
-            type = {$plugin.tx_jhcaptcha.settings.reCaptcha.type}
             lang = {$plugin.tx_jhcaptcha.settings.reCaptcha.lang}
             size = {$plugin.tx_jhcaptcha.settings.reCaptcha.size}
             siteKey = {$plugin.tx_jhcaptcha.settings.reCaptcha.siteKey}

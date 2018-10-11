@@ -46,10 +46,6 @@ Optionale Konfiguration
                 # Optionen: dark | light
                 # Standard: light
                 theme = light
-                # Beschreibung: Der Typ des Captchas
-                # Optionen: audio | image
-                # Standard: image
-                type = image
                 # Beschreibung: Die Sprache des Captchas
                 # Optionen: https://developers.google.com/recaptcha/docs/language
                 # Standard: en
