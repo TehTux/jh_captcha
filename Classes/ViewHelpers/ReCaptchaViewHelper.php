@@ -24,22 +24,33 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
         $this->configurationManager = $configurationManager;
     }
 
+    public function initializeArguments()
+    {
+        $this->registerArgument('uid', 'String', 'reCaptcha uid', false);
+    }
+
     public function render()
     {
         $settings = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'JhCaptcha');
-        $siteKey = $settings['reCaptcha']['siteKey'];
-        $theme = $settings['reCaptcha']['theme'];
-        $type = $settings['reCaptcha']['type'];
-        $lang = $settings['reCaptcha']['lang'];
-        $size = $settings['reCaptcha']['size'];
 
-        $reCaptchaApi = '<script src="https://www.google.com/recaptcha/api.js?hl='.$lang.'" async defer></script>';
-        $callBack = '<script type="text/javascript">var captchaCallback = function() { document.getElementById("captchaResponse").value = document.getElementById("g-recaptcha-response").value }</script>';
-        $reCaptcha = '<div class="g-recaptcha" data-sitekey="'.$siteKey.'" data-theme="'.$theme.
-            '" data-callback="captchaCallback" data-type="'.$type.'" data-size="'.$size.'"></div>';
+        if ($settings['reCaptcha']['siteKey']) {
+            $siteKey = $settings['reCaptcha']['siteKey'];
+            $theme = $settings['reCaptcha']['theme'];
+            $lang = $settings['reCaptcha']['lang'];
+            $size = $settings['reCaptcha']['size'];
+            $uid = $this->arguments['uid'];
+            if ($uid) {
+                $captchaResponseId = 'captchaResponse-' . $uid;
+            } else {
+                $captchaResponseId = 'captchaResponse';
+            }
 
-        if ($siteKey) {
-            return $reCaptchaApi.$callBack.$reCaptcha;
+            $reCaptcha = '<div id="recaptcha' . $uid . '"></div>';
+            $renderReCaptcha = '<script type="text/javascript">var apiCallback' . $uid . ' = function() { reCaptchaWidget' . $uid . ' = grecaptcha.render("recaptcha' . $uid . '", { "sitekey" : "' . $siteKey .'", "callback" : "captchaCallback' . $uid .'", "theme" : "' . $theme . '", "size" : "' . $size . '" }); }</script>';
+            $reCaptchaApi = '<script src="https://www.google.com/recaptcha/api.js?onload=apiCallback' . $uid . '&hl=' . $lang . '&render=explicit" async defer></script>';
+            $callBack = '<script type="text/javascript">var captchaCallback' . $uid . ' = function() { document.getElementById("' . $captchaResponseId . '").value = grecaptcha.getResponse(reCaptchaWidget' . $uid . ') }</script>';
+
+            return $reCaptcha . $callBack . $renderReCaptcha . $reCaptchaApi;
         } else {
             return \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('setApiKey', null, null);
         }

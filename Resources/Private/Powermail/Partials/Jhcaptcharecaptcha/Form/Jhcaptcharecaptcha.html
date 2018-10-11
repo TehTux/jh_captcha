@@ -6,7 +6,7 @@
     <label for="powermail_field_{field.marker}" class="powermail_label" title="{field.description}">
         <vh:string.RawAndRemoveXss>{field.title}</vh:string.RawAndRemoveXss><f:if condition="{field.mandatory}"><span class="mandatory">*</span></f:if>
     </label>
-    <jhcaptcha:reCaptcha />
+    <jhcaptcha:reCaptcha uid="{f:if(condition: '{field.uid}', then: 'f{field.uid}', else: '')}" />
 
     <f:form.textfield
             type="hidden"
@@ -15,5 +15,5 @@
             value="{vh:Misc.PrefillField(field:field, mail:mail)}"
             class="powermail_field powermail_input {vh:Validation.ErrorClass(field:field, class:'powermail_field_error')}"
             additionalAttributes="{vh:Validation.ValidationDataAttribute(field:field)}"
-            id="captchaResponse" />
+            id="{f:if(condition: '{field.uid}', then: 'captchaResponse-f{field.uid}', else: 'captchaResponse')}" />
 </div>
