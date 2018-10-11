@@ -122,14 +122,15 @@ Jetzt ist das reCAPTCHA einsatzbereit!
 Verwendung in Formhandler
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Das reCAPTCHA kann leicht in der `Erweiterung Formhandler`_ verwendet werden.
+Das reCAPTCHA kann leicht in der `Erweiterung Formhandler`_ (oder `phorax/formhandler`_ für TYPO3 v8) verwendet werden.
 Folgende Schritte sind dafür notwendig:
 
 .. _Erweiterung Formhandler: http://typo3.org/extensions/repository/view/formhandler
+.. _phorax/formhandler: https://github.com/PHORAX/formhandler
 
 .. note::
 
-    Bitte beachte, dass die Verwendung nur in den Formhandler Versionen 2.3 - 2.4 getestet wurde!
+    Bitte beachte, dass die Verwendung nur in den formhandler Versionen 2.3 - 2.4 und 3.0 (phorax/formhandler) getestet wurde!
     Höchstwahrscheinlich läuft es auch mit neueren Versionen.
 
 1. Mastertemplate
