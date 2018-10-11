@@ -68,7 +68,7 @@ Folgende Schritte sind dafür notwendig:
 
 .. note::
 
-    Bitte beachte, dass die Verwendung nur in den Powermail Versionen 2.2 - 3.11 getestet wurde!
+    Bitte beachte, dass die Verwendung nur in den Powermail Versionen 3.0 - 3.11 getestet wurde!
     Höchstwahrscheinlich läuft es auch mit neueren Versionen.
 
 1. Seiten-TSconfig
