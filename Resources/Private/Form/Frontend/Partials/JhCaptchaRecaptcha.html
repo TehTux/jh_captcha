@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:form="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers"
+      xmlns:jhcaptcha="http://typo3.org/ns/Haffner/JhCaptcha/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:form.validationResults  for="{element.rootForm.identifier}.{element.identifier}">
+    <jhcaptcha:reCaptcha uid="{element.uniqueIdentifier}" />
+    <f:form.hidden
+        property="{element.identifier}"
+        id="captchaResponse-{element.uniqueIdentifier}"
+        value=""
+        additionalAttributes="{form:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+    />
+    <f:if condition="{validationResults.flattenedErrors}">
+        <span class="error help-block" role="alert">
+            <f:for each="{validationResults.errors}" as="error">
+                {form:translateElementError(element: element, error: error)}
+                <br />
+            </f:for>
+        </span>
+    </f:if>
+</f:form.validationResults>
+
+</html>

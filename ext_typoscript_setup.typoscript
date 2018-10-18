@@ -1,0 +1,9 @@
+[compatVersion = 8]
+# EXT:form
+module.tx_form {
+    settings.yamlConfigurations {
+        JhCaptchaReCaptchaBase = EXT:jh_captcha/Configuration/Yaml/ReCaptcha/BaseSetup.yaml
+        JhCaptchaReCaptchaFormEditor = EXT:jh_captcha/Configuration/Yaml/ReCaptcha/FormEditorSetup.yaml
+    }
+}
+[global]
