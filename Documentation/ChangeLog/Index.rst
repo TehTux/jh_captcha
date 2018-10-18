@@ -11,6 +11,18 @@
 ChangeLog
 =========
 
+2.0.0
+-----
+
+* Drop support for TYPO3 6.2
+* Add support for TYPO3 8
+* Add support for formhandler 3.0 (phorax/formhandler) (TYPO3 v8)
+* [FEATURE] Multiple reCAPTCHAs on one site
+* Remove obsolete recaptcha setting type
+* Drop support for powermail <3.9
+* Add support for powermail 4
+* [FEATURE] Rewrite powermail support (Now validation works with confirmation page)
+
 1.3.x
 -----
 
