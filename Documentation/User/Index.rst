@@ -67,51 +67,10 @@ The reCAPTCHA can easy be used in the `extension powermail`_. The following step
 
 .. note::
 
-    Note that the usage has only been tested in the powermail versions 3.0 - 4.4!
+    Note that the usage has only been tested in the powermail versions 3.9 - 4.4!
     Most likely it will also work with later versions.
 
-1. Page-TSconfig
-----------------
-
-First, a new field in powermail must be created for the reCAPTCHA.
-Add the following line to the PageTSconfig.
-
-.. code-block:: typoscript
-    :linenos:
-
-    tx_powermail.flexForm.type.addFieldOptions.jhcaptcharecaptcha = reCAPTCHA (jh_captcha)
-
-2. TypoScript
--------------
-
-Take TypoScript Setup to tell powermail, where to find the partial:
-
-.. code-block:: typoscript
-    :linenos:
-    :emphasize-lines: 5
-
-    plugin.tx_powermail.view {
-        partialRootPath >
-        partialRootPaths >
-        partialRootPaths {
-            10 = EXT:powermail/Resources/Private/Partials/
-            20 = EXT:jh_captcha/Resources/Private/Powermail/Partials/Jhcaptcharecaptcha
-        }
-    }
-
-3. Form
--------
-
-Now you can use it in your form.
-
-1. Create a new field in your form, set a title ("Captcha" for example) and select the type "reCAPTCHA (jh_captcha)".
-
-.. image:: ../Images/Powermail/Form1.jpg
-
-2. Go to the "Extended" tab. Check "Mandatory Field" and let the "Validation" field blank.
-
-.. image:: ../Images/Powermail/Form2.jpg
-
+Create a new field in your form, set a title ("Captcha" for example) and select the type "reCAPTCHA (jh_captcha)".
 Now the reCAPTCHA is ready!
 
 Usage in Formhandler

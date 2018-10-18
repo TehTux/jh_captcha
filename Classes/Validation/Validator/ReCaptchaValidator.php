@@ -41,29 +41,4 @@ class ReCaptchaValidator extends \Haffner\JhCaptcha\Validation\Validator\Abstrac
             }
         }
     }
-
-    /**
-     * Validate function for the powermail extension.
-     *
-     * @param \In2code\Powermail\Domain\Model\Mail                $mail            the form field
-     * @param \In2code\Powermail\Domain\Validator\CustomValidator $customValidator the validator from powermail
-     */
-    public function validateCaptchaInPowermail($mail, $customValidator)
-    {
-        foreach ($mail->getAnswers() as $answer) {
-            if ($answer->getField()->getType() == 'jhcaptcharecaptcha') {
-                // validate the captcha
-                $result = $this->validate($answer->getValue());
-                // set error messages if necessary
-                $errors = $result->getErrors();
-                if (!empty($errors)) {
-                    foreach ($errors as $error) {
-                        $customValidator->setErrorAndMessage($answer->getField(), $error->getMessage());
-                    }
-                }
-                // remove captcha field from the mail
-                $mail->removeAnswer($answer);
-            }
-        }
-    }
 }

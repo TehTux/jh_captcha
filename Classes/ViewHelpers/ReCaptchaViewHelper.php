@@ -27,6 +27,7 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
     public function initializeArguments()
     {
         $this->registerArgument('uid', 'String', 'reCaptcha uid', false);
+        $this->registerArgument('type', 'String', 'form type', false);
     }
 
     public function render()
@@ -48,7 +49,9 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
             $reCaptcha = '<div id="recaptcha' . $uid . '"></div>';
             $renderReCaptcha = '<script type="text/javascript">var apiCallback' . $uid . ' = function() { reCaptchaWidget' . $uid . ' = grecaptcha.render("recaptcha' . $uid . '", { "sitekey" : "' . $siteKey .'", "callback" : "captchaCallback' . $uid .'", "theme" : "' . $theme . '", "size" : "' . $size . '" }); }</script>';
             $reCaptchaApi = '<script src="https://www.google.com/recaptcha/api.js?onload=apiCallback' . $uid . '&hl=' . $lang . '&render=explicit" async defer></script>';
-            $callBack = '<script type="text/javascript">var captchaCallback' . $uid . ' = function() { document.getElementById("' . $captchaResponseId . '").value = grecaptcha.getResponse(reCaptchaWidget' . $uid . ') }</script>';
+            if (!$this->arguments['type'] == "powermail") {
+                $callBack = '<script type="text/javascript">var captchaCallback' . $uid . ' = function() { document.getElementById("' . $captchaResponseId . '").value = grecaptcha.getResponse(reCaptchaWidget' . $uid . ') }</script>';
+            }
 
             return $reCaptcha . $callBack . $renderReCaptcha . $reCaptchaApi;
         } else {

@@ -13,5 +13,7 @@ plugin.tx_jhcaptcha {
             # cat=plugin.tx_jhcaptcha/recaptcha; type=string; label=Secret key: See https://www.google.com/recaptcha/admin
             secretKey =
         }
+        # cat=plugin.tx_jhcaptcha/powermail; type=int; label= If this check fails - add other indication value (0 disables this check completely)
+        powermail.recaptchaId = 11
     }
 }
