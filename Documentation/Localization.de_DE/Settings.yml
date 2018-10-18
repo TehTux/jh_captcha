@@ -10,8 +10,8 @@
 conf.py:
   copyright: 2015-2018
   project: Google reCAPTCHA v2.0
-  version: 2.0.0
-  release: 2.0.0
+  version: 3.0.0-dev
+  release: 3.0.0-dev
   extensions:
     - sphinx.ext.intersphinx
     - t3sphinx.ext.t3extras
