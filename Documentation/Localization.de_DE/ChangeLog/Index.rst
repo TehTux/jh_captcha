@@ -11,6 +11,18 @@
 Änderungshistorie
 =================
 
+2.0.0
+-----
+
+* Unterstützung für TYPO3 6.2 eingestellt
+* Unterstützung für TYPO3 8
+* Unterstützung für formhandler 3.0 (phorax/formhandler) (TYPO3 v8)
+* [FEATURE] Mehrere reCAPTCHAs auf einer Seite
+* Veraltete Konfiguration für reCPATCHA type entfernt
+* Unterstützung für powermail <3.9 eingestellt
+* Unterstützung für powermail 4
+* [FEATURE] Unterstützung für powermail neu implementiert (Validierung funktioniert nun mit der Bestätigungsseite)
+
 1.3.x
 -----
 

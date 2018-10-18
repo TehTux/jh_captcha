@@ -17,7 +17,7 @@
     "docs": "https://docs.typo3.org/typo3cms/extensions/jh_captcha/"
   },
   "require": {
-    "typo3/cms-core": ">=6.2.0,<8.0"
+    "typo3/cms-core": ">=7.6.0,<9.0"
   },
   "replace": {
     "jh_captcha": "self.version",

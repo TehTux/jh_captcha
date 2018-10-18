@@ -4,8 +4,6 @@ plugin.tx_jhcaptcha {
         reCaptcha {
             # cat=plugin.tx_jhcaptcha/recaptcha; type=options[dark,light]; label=The color theme of the widget
             theme = light
-            # cat=plugin.tx_jhcaptcha/recaptcha; type=options[audio,image]; label=The type of CAPTCHA to serve
-            type = image
             # cat=plugin.tx_jhcaptcha/recaptcha; type=string; label=The language of the widget: See https://developers.google.com/recaptcha/docs/language
             lang = en
             # cat=plugin.tx_jhcaptcha/recaptcha; type=options[normal,compact]; label=The size of the widget
@@ -15,5 +13,7 @@ plugin.tx_jhcaptcha {
             # cat=plugin.tx_jhcaptcha/recaptcha; type=string; label=Secret key: See https://www.google.com/recaptcha/admin
             secretKey =
         }
+        # cat=plugin.tx_jhcaptcha/powermail; type=int; label= If this check fails - add other indication value (0 disables this check completely)
+        powermail.recaptchaId = 11
     }
 }

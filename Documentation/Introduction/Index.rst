@@ -26,9 +26,3 @@ Moreover, this extension can be easily used in powermail and formhandler forms.
 
 YouTube - Introduction to reCAPTCHA:
 https://www.youtube.com/watch?v=jwslDn3ImM0
-
-Bugs und Feature requests
--------------------------
-
-Report bugs and make feature requests:
-https://forge.typo3.org/projects/extension-jh_captcha/issues/new

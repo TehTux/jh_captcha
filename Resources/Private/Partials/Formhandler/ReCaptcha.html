@@ -1,4 +1,4 @@
 {namespace jhcaptcha = Haffner\JhCaptcha\ViewHelpers}
 
-<jhcaptcha:reCaptcha />
-<input type="hidden" id="captchaResponse" name="###formValuesPrefix###[jh_captcha_recaptcha]" value="" />
+<jhcaptcha:reCaptcha uid="{data.uid}" />
+<input type="hidden" id="{f:if(condition: '{data.uid}', then: 'captchaResponse-{data.uid}', else: 'captchaResponse')}" name="###formValuesPrefix###[jh_captcha_recaptcha]" value="" />

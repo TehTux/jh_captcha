@@ -23,9 +23,3 @@ Außerdem kann diese Erweiterung einfach in powermail und formhandler Formularen
 
 YouTube - Introduction to reCAPTCHA:
 https://www.youtube.com/watch?v=jwslDn3ImM0
-
-Bugs und Feature-Vorschläge
----------------------------
-
-Du kannst Bugs und Feature-Vorschläge hier melden:
-https://forge.typo3.org/projects/extension-jh_captcha/issues/new

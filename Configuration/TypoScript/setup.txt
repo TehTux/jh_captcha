@@ -3,7 +3,6 @@ plugin.tx_jhcaptcha {
     settings {
         reCaptcha {
             theme = {$plugin.tx_jhcaptcha.settings.reCaptcha.theme}
-            type = {$plugin.tx_jhcaptcha.settings.reCaptcha.type}
             lang = {$plugin.tx_jhcaptcha.settings.reCaptcha.lang}
             size = {$plugin.tx_jhcaptcha.settings.reCaptcha.size}
             siteKey = {$plugin.tx_jhcaptcha.settings.reCaptcha.siteKey}
@@ -15,4 +14,18 @@ plugin.tx_jhcaptcha {
 plugin.Tx_Formhandler.settings {
     markers.jh_captcha_recaptcha = FLUIDTEMPLATE
     markers.jh_captcha_recaptcha.file = EXT:jh_captcha/Resources/Private/Partials/Formhandler/ReCaptcha.html
+}
+
+plugin.tx_powermail {
+    view.partialRootPaths.JhCaptcha = EXT:jh_captcha/Resources/Private/Powermail/Partials
+    settings.setup.spamshield {
+        _enable = 1
+        methods.{$plugin.tx_jhcaptcha.settings.powermail.recaptchaId} {
+            _enable = 1
+            name = reCAPTCHA (jh_captcha)
+            class = Haffner\JhCaptcha\Validation\Validator\Powermail
+            indication = {$plugin.tx_jhcaptcha.settings.powermail.recaptchaId}
+            configuration.secretkey = {$plugin.tx_jhcaptcha.settings.reCaptcha.secretKey}
+        }
+    }
 }

@@ -46,10 +46,6 @@ Optional Configuration
                 # Options: dark | light
                 # Default: light
                 theme = light
-                # Description: The type of CAPTCHA to serve
-                # Options: audio | image
-                # Default: image
-                type = image
                 # Description: The language of the widget
                 # Options: https://developers.google.com/recaptcha/docs/language
                 # Default: en
@@ -71,66 +67,24 @@ The reCAPTCHA can easy be used in the `extension powermail`_. The following step
 
 .. note::
 
-    Note that the usage has only been tested in the powermail versions 2.2 - 3.11!
+    Note that the usage has only been tested in the powermail versions 3.9 - 4.4!
     Most likely it will also work with later versions.
 
-1. Page-TSconfig
-----------------
-
-First, a new field in powermail must be created for the reCAPTCHA.
-Add the following line to the PageTSconfig.
-
-.. code-block:: typoscript
-    :linenos:
-
-    tx_powermail.flexForm.type.addFieldOptions.jhcaptcharecaptcha = reCAPTCHA (jh_captcha)
-
-2. TypoScript
--------------
-
-Take TypoScript Setup to tell powermail, where to find the partial:
-
-.. code-block:: typoscript
-    :linenos:
-    :emphasize-lines: 5
-
-    plugin.tx_powermail.view {
-        partialRootPath >
-        partialRootPaths >
-        partialRootPaths {
-            10 = EXT:powermail/Resources/Private/Partials/
-            20 = EXT:jh_captcha/Resources/Private/Powermail/Partials/Jhcaptcharecaptcha
-        }
-    }
-
-3. Form
--------
-
-Now you can use it in your form.
-
-1. Create a new field in your form, set a title ("Captcha" for example) and select the type "reCAPTCHA (jh_captcha)".
-
-.. image:: ../Images/Powermail/Form1.jpg
-
-2. Go to the "Extended" tab. Check "Mandatory Field" and let the "Validation" field blank.
-
-.. image:: ../Images/Powermail/Form2.jpg
-
+Create a new field in your form, set a title ("Captcha" for example) and select the type "reCAPTCHA (jh_captcha)".
 Now the reCAPTCHA is ready!
 
 Usage in Formhandler
 ^^^^^^^^^^^^^^^^^^^^
 
-The reCAPTCHA can easy be used in the `extension formhandler`_.
+The reCAPTCHA can easy be used in the `extension formhandler`_ (or `phorax/formhandler`_ for TYPO3 v8).
 The following steps are necessary:
 
 .. _extension formhandler: http://typo3.org/extensions/repository/view/formhandler
+.. _phorax/formhandler: https://github.com/PHORAX/formhandler
 
 .. note::
 
-    Note that the usage has only been tested in the formhandler versions 2.0 and 2.3 - 2.4!
-    Versions 2.1-2.2 don't work, because there is a bug in error check
-    (fixed with 2.3 http://www.typo3-formhandler.com/footer/history/release-notes/version-230/ )!
+    Note that the usage has only been tested in the formhandler versions 2.3 - 2.4 and phorax/formhandler 3.0!
     Most likely it will also work with later versions.
 
 1. Mastertemplate
@@ -167,22 +121,6 @@ Now the marker can be used in the Form Template:
 -------------
 
 Then the validators need to be assigned to the captcha field:
-
-Formhandler 2.0:
-
-.. code-block:: typoscript
-    :linenos:
-
-    [...]
-    validators.1.config.fieldConf {
-        jh_captcha_recaptcha.errorCheck {
-            1 = required
-            2 = Tx_JhCaptcha_ErrorCheck_ReCaptcha
-        }
-    }
-    [...]
-
-Formhandler 2.3 - 2.4:
 
 .. code-block:: typoscript
     :linenos:
