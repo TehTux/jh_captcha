@@ -11,8 +11,17 @@
 Änderungshistorie
 =================
 
-2.0.0
+2.0.x
 -----
+
+2.1.0
+^^^^^
+
+* [BUGFIX] Fehler bei EXT:powermail Validierung behoben
+* [FEATURE] Unterstützung für EXT:form (TYPO3 v8)
+
+2.0.0
+^^^^^
 
 * Unterstützung für TYPO3 6.2 eingestellt
 * Unterstützung für TYPO3 8
