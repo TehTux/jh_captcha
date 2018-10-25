@@ -11,8 +11,17 @@
 ChangeLog
 =========
 
-2.0.0
+2.0.x
 -----
+
+2.1.0
+^^^^^
+
+* [BUGFIX] Fix EXT:powermail validation
+* [FEATURE] Add support for EXT:form (TYPO3 v8)
+
+2.0.0
+^^^^^
 
 * Drop support for TYPO3 6.2
 * Add support for TYPO3 8

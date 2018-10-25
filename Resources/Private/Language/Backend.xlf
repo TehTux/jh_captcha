@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2015-02-25T23:56:50Z" product-name="jh_captcha">
+        <header/>
+        <body>
+            <trans-unit id="formEditor.elements.JhCaptchaRecaptcha.label" xml:space="preserve">
+				<source>reCAPTCHA</source>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

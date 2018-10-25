@@ -23,7 +23,7 @@ Google reCAPTCHA v2.0
 		en
 
 	:Description:
-		With this extension you can use reCAPTCHA v2.0 from Google in your own TYPO3 extensions as spam protection. Moreover, this extension can be easily used in powermail and formhandler forms.
+		Use Google reCAPTCHA v2.0 in your own TYPO3 extensions, EXT:form, EXT:powermail and EXT:formhandler as spam protection.
 
 	:Copyright:
 		2015-2018
