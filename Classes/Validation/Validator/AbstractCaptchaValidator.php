@@ -4,6 +4,7 @@ namespace Haffner\JhCaptcha\Validation\Validator;
 
 abstract class AbstractCaptchaValidator extends \TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator
 {
+    protected $acceptsEmptyValues = false;
 
     /**
      * @var array Extension TypoScript
