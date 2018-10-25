@@ -58,8 +58,23 @@ Optionale Konfiguration
         }
     }
 
-Verwendung in Powermail
-^^^^^^^^^^^^^^^^^^^^^^^
+Verwendung in Form (EXT:form)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Das reCAPTCHA kann leicht in der `Core Erweiterung Form`_ verwendet werden.
+Folgende Schritte sind dafür notwendig:
+
+.. _Core Erweiterung Form: hhttps://docs.typo3.org/typo3cms/extensions/form/
+
+.. note::
+
+    Bitte beachte, dass die Verwendung erst ab TYPO3 v8 möglich ist.
+
+Erstelle dazu in deinem Formular ein neues Feld reCAPTCHA (JhCaptchaRecaptcha) und speichere das Formular.
+Jetzt ist das reCAPTCHA einsatzbereit!
+
+Verwendung in Powermail (EXT:powermail)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Das reCAPTCHA kann leicht in der `Erweiterung Powermail`_ verwendet werden.
 Folgende Schritte sind dafür notwendig:
@@ -74,8 +89,8 @@ Folgende Schritte sind dafür notwendig:
 Erstelle dazu in deinem Formular ein neues Feld, vergebe eine Bezeichnung (z.B. "Captcha") und wähle den Typ "reCAPTCHA (jh_captcha)" aus.
 Jetzt ist das reCAPTCHA einsatzbereit!
 
-Verwendung in Formhandler
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Verwendung in Formhandler (EXT:formhandler)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Das reCAPTCHA kann leicht in der `Erweiterung Formhandler`_ (oder `phorax/formhandler`_ für TYPO3 v8) verwendet werden.
 Folgende Schritte sind dafür notwendig:
