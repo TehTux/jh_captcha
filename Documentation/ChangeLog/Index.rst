@@ -14,6 +14,12 @@ ChangeLog
 2.0.x
 -----
 
+2.1.1
+^^^^^
+
+* [DOC] Fix bugs in the documentation
+* [DOC] Migrate settings file to the new format
+
 2.1.0
 ^^^^^
 
