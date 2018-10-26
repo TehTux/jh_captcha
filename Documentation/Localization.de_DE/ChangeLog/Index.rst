@@ -3,7 +3,7 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: ../../Includes.txt
+.. include:: ../Includes.txt
 
 
 .. _changelog:
@@ -13,6 +13,12 @@
 
 2.0.x
 -----
+
+2.1.1
+^^^^^
+
+* [DOC] Fehler in der Dokumentation behoben
+* [DOC] Dokumentation Settings-Datei zu neuen format migriert
 
 2.1.0
 ^^^^^
