@@ -3,7 +3,7 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: ../../Includes.txt
+.. include:: ../Includes.txt
 
 
 .. _user-manual:
@@ -37,7 +37,7 @@ Optionale Konfiguration
 
 .. code-block:: typoscript
     :linenos:
-    :emphasize-lines: 7, 11, 15, 19
+    :emphasize-lines: 7, 11, 15
 
     plugin.tx_jhcaptcha {
         settings {
