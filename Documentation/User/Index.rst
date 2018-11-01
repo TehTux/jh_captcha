@@ -81,7 +81,7 @@ The reCAPTCHA can easy be used in the `extension powermail`_. The following step
 
 .. note::
 
-    Note that the usage has only been tested in the powermail versions 5.0-5.6!
+    Note that the usage has only been tested in the powermail versions 5.0-5.6 and 6.0-6.2!
     Most likely it will also work with later versions.
 
 Create a new field in your form, set a title ("Captcha" for example) and select the type "reCAPTCHA (jh_captcha)".
