@@ -83,7 +83,7 @@ Folgende Schritte sind dafür notwendig:
 
 .. note::
 
-    Bitte beachte, dass die Verwendung nur in den Powermail Versionen 3.9 - 4.4 getestet wurde!
+    Bitte beachte, dass die Verwendung nur in den Powermail Versionen 5.0-5.6 getestet wurde!
     Höchstwahrscheinlich läuft es auch mit neueren Versionen.
 
 Erstelle dazu in deinem Formular ein neues Feld, vergebe eine Bezeichnung (z.B. "Captcha") und wähle den Typ "reCAPTCHA (jh_captcha)" aus.
