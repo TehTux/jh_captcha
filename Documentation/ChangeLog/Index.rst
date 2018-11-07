@@ -14,6 +14,12 @@ ChangeLog
 2.0.x
 -----
 
+2.1.2
+^^^^^
+
+* [DOC] Fix formhandler instruction
+* [TASK] Update extension icon
+
 2.1.1
 ^^^^^
 

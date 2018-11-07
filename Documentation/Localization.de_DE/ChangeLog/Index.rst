@@ -14,6 +14,12 @@
 2.0.x
 -----
 
+2.1.2
+^^^^^
+
+* [DOC] formhandler Anleitung korrigiert
+* [TASK] Erweiterungs-Icon aktualisiert
+
 2.1.1
 ^^^^^
 
