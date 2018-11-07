@@ -158,6 +158,6 @@ Finally, the label and the error messages must be defined. Example:
 
     <label index="jh_captcha_recaptcha">reCAPTCHA</label>
     <label index="error_jh_captcha_recaptcha_required">reCAPTCHA is a mandatory field.</label>
-    <label index="error_jh_captcha_recaptcha_Tx_JhCaptcha_ErrorCheck_ReCaptcha">reCAPTCHA validation error</label>
+    <label index="error_jh_captcha_recaptcha_recaptcha">reCAPTCHA validation error</label>
 
 Now the reCAPTCHA is ready!

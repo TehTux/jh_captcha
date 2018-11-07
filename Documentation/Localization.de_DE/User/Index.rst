@@ -160,6 +160,6 @@ Zum Schluss muss noch das Label sowie die Fehlermeldungen definiert werden. Beis
 
     <label index="jh_captcha_recaptcha">reCAPTCHA</label>
     <label index="error_jh_captcha_recaptcha_required">reCAPTCHA ist ein Pflichtfeld.</label>
-    <label index="error_jh_captcha_recaptcha_Tx_JhCaptcha_ErrorCheck_ReCaptcha">Fehler beim Validieren des reCAPTCHA.</label>
+    <label index="error_jh_captcha_recaptcha_recaptcha">Fehler beim Validieren des reCAPTCHA.</label>
 
 Anschließend ist das reCAPTCHA einsatzbereit.
