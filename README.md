@@ -5,7 +5,7 @@
 [![Monthly Downloads](https://poser.pugx.org/haffner/jh_captcha/d/monthly)](https://packagist.org/packages/haffner/jh_captcha)
 [![License](https://poser.pugx.org/haffner/jh_captcha/license)](https://packagist.org/packages/haffner/jh_captcha)
 
-Use Google reCAPTCHA v2.0 in your own TYPO3 extensions, EXT:form, EXT:powermail and EXT:formhandler as spam protection.
+Use Google reCAPTCHA (v2/v3) in your own TYPO3 extensions, EXT:form, EXT:powermail and EXT:formhandler as spam protection.
 
 ## Documentation
 

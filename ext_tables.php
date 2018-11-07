@@ -7,7 +7,7 @@ if (!defined('TYPO3_MODE')) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
     $_EXTKEY,
     'Configuration/TypoScript',
-    'Google reCAPTCHA v2.0'
+    'Google reCAPTCHA (v2/v3)'
 );
 
 # EXT:powermail
