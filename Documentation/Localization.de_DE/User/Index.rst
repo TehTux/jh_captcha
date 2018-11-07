@@ -14,20 +14,23 @@ Benutzer Handbuch
 Erforderliche Konfiguration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1) Du musst deine Seite registrieren um ein API-Schlüsselpaar für reCAPTCHA zu erhalten: http://www.google.com/recaptcha/admin
+1) Du musst deine Seite registrieren um ein API-Schlüsselpaar für reCAPTCHA (v2 und/oder v3) zu erhalten: http://www.google.com/recaptcha/admin
 
-2) Trage diese Schlüssel in TypoScript ein:
+2) Trage diese Schlüssel (v2 und/oder v3) und die Version in TypoScript ein:
 
 .. code-block:: typoscript
     :linenos:
-    :emphasize-lines: 4, 5
+    :emphasize-lines: 2, 4, 5, 8, 9
 
-    plugin.tx_jhcaptcha {
-        settings {
-            reCaptcha {
-                siteKey =
-                secretKey =
-            }
+    plugin.tx_jhcaptcha.settings.reCaptcha {
+        version =
+        v2 {
+            siteKey =
+            secretKey =
+        }
+        v3 {
+            siteKey =
+            secretKey =
         }
     }
 
@@ -37,24 +40,29 @@ Optionale Konfiguration
 
 .. code-block:: typoscript
     :linenos:
-    :emphasize-lines: 7, 11, 15
+    :emphasize-lines: 6, 10, 14, 19, 21
 
-    plugin.tx_jhcaptcha {
-        settings {
-            reCaptcha {
-                # Beschreibung: Farbe des Captchas
-                # Optionen: dark | light
-                # Standard: light
-                theme = light
-                # Beschreibung: Die Sprache des Captchas
-                # Optionen: https://developers.google.com/recaptcha/docs/language
-                # Standard: en
-                lang = en
-                # Beschreibung: Die Größe des Captchas
-                # Optionen: normal | compact
-                # Standard: normal
-                size = normal
-            }
+    plugin.tx_jhcaptcha.settings.reCaptcha {
+        v2 {
+            # Beschreibung: Farbe des Captchas
+            # Optionen: dark | light
+            # Standard: light
+            theme = light
+            # Beschreibung: Die Sprache des Captchas
+            # Optionen: https://developers.google.com/recaptcha/docs/language
+            # Standard: en
+            lang = en
+            # Beschreibung: Die Größe des Captchas
+            # Optionen: normal | compact
+            # Standard: normal
+            size = normal
+        }
+        v3 {
+            # Beschreibung: Mindestpunktzahl (0.0 - 1.0)
+            # Standard: 0.5
+            minimumScore = 0.5
+            # Beschreibung: Siehe https://developers.google.com/recaptcha/docs/v3
+            action = homepage
         }
     }
 
@@ -83,7 +91,7 @@ Folgende Schritte sind dafür notwendig:
 
 .. note::
 
-    Bitte beachte, dass die Verwendung nur in den Powermail Versionen 3.9 - 4.4 getestet wurde!
+    Bitte beachte, dass die Verwendung nur in den Powermail Versionen 5.0-5.6, 6.0-6.2 und 7.0 getestet wurde!
     Höchstwahrscheinlich läuft es auch mit neueren Versionen.
 
 Erstelle dazu in deinem Formular ein neues Feld, vergebe eine Bezeichnung (z.B. "Captcha") und wähle den Typ "reCAPTCHA (jh_captcha)" aus.
@@ -113,10 +121,7 @@ Zuerst muss das Captcha im Mastertemplate aufgenommen werden. Beispiel:
 
     <!-- ###master_spamprotection-jh_captcha_recaptcha### -->
     <div class="row">
-    	<div class="large-3 columns">
-    		<label class="###is_error_jh_captcha_recaptcha###">###LLL:jh_captcha_recaptcha### ###required_jh_captcha_recaptcha###</label>
-    	</div>
-    	<div class="large-9 columns">
+    	<div class="large-12 columns">
     		###jh_captcha_recaptcha###
     		###error_jh_captcha_recaptcha###
     	</div>
@@ -160,6 +165,6 @@ Zum Schluss muss noch das Label sowie die Fehlermeldungen definiert werden. Beis
 
     <label index="jh_captcha_recaptcha">reCAPTCHA</label>
     <label index="error_jh_captcha_recaptcha_required">reCAPTCHA ist ein Pflichtfeld.</label>
-    <label index="error_jh_captcha_recaptcha_Tx_JhCaptcha_ErrorCheck_ReCaptcha">Fehler beim Validieren des reCAPTCHA.</label>
+    <label index="error_jh_captcha_recaptcha_recaptcha">Fehler beim Validieren des reCAPTCHA.</label>
 
 Anschließend ist das reCAPTCHA einsatzbereit.

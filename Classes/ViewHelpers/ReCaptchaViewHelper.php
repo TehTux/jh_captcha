@@ -2,6 +2,9 @@
 
 namespace Haffner\JhCaptcha\ViewHelpers;
 
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+
 class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
 {
     /**
@@ -12,14 +15,14 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
     protected $escapeOutput = false;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
+     * @var ConfigurationManagerInterface
      */
     protected $configurationManager;
 
     /**
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
+     * @param ConfigurationManagerInterface $configurationManager
      */
-    public function injectConfigurationManager(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager)
+    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager)
     {
         $this->configurationManager = $configurationManager;
     }
@@ -32,30 +35,83 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 
     public function render()
     {
-        $settings = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'JhCaptcha');
+        $settings = $this->configurationManager->getConfiguration(
+            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'JhCaptcha');
 
-        if ($settings['reCaptcha']['siteKey']) {
-            $siteKey = $settings['reCaptcha']['siteKey'];
-            $theme = $settings['reCaptcha']['theme'];
-            $lang = $settings['reCaptcha']['lang'];
-            $size = $settings['reCaptcha']['size'];
-            $uid = $this->arguments['uid'];
-            if ($uid) {
-                $captchaResponseId = 'captchaResponse-' . $uid;
-            } else {
-                $captchaResponseId = 'captchaResponse';
-            }
-
-            $reCaptcha = '<div id="recaptcha' . $uid . '"></div>';
-            $renderReCaptcha = '<script type="text/javascript">var apiCallback' . str_replace("-", "", $this->arguments['uid']) . ' = function() { reCaptchaWidget' . str_replace("-", "", $this->arguments['uid']) . ' = grecaptcha.render("recaptcha' . $uid . '", { "sitekey" : "' . $siteKey .'", "callback" : "captchaCallback' . str_replace("-", "", $this->arguments['uid']) .'", "theme" : "' . $theme . '", "size" : "' . $size . '" }); }</script>';
-            $reCaptchaApi = '<script src="https://www.google.com/recaptcha/api.js?onload=apiCallback' . str_replace("-", "", $this->arguments['uid']) . '&hl=' . $lang . '&render=explicit" async defer></script>';
-            if (!$this->arguments['type'] == "powermail") {
-                $callBack = '<script type="text/javascript">var captchaCallback' . str_replace("-", "", $this->arguments['uid']) . ' = function() { document.getElementById("' . $captchaResponseId . '").value = grecaptcha.getResponse(reCaptchaWidget' . str_replace("-", "", $this->arguments['uid']) . ') }</script>';
-            }
-
-            return $reCaptcha . $callBack . $renderReCaptcha . $reCaptchaApi;
-        } else {
-            return \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('setApiKey', null, null);
+        $captchaResponseId = 'captchaResponse';
+        if ($this->arguments['uid']) {
+            $captchaResponseId = $captchaResponseId . '-' . $this->arguments['uid'];
         }
+
+        if ($settings['reCaptcha']['version'] == 2) {
+            // render v2
+            if ($settings['reCaptcha']['v2']['siteKey']) {
+                return $this->renderV2($captchaResponseId, $settings);
+            } else {
+                return LocalizationUtility::translate('setApiKey', 'jh_captcha');
+            }
+        } else {
+            // render v3
+            if ($settings['reCaptcha']['v3']['siteKey']) {
+                return $this->renderV3($captchaResponseId, $settings);
+            } else {
+                return LocalizationUtility::translate('setApiKey', 'jh_captcha');
+            }
+        }
+    }
+
+    private function renderV2($captchaResponseId, $settings)
+    {
+        $siteKey = $settings['reCaptcha']['v2']['siteKey'];
+        $theme = $settings['reCaptcha']['v2']['theme'];
+        $lang = $settings['reCaptcha']['v2']['lang'];
+        $size = $settings['reCaptcha']['v2']['size'];
+
+        $reCaptcha = '<div id="recaptcha' . $this->arguments['uid'] . '"></div>';
+        $renderReCaptcha = '<script type="text/javascript">var apiCallback' . str_replace("-", "", $this->arguments['uid']) . ' = function() { reCaptchaWidget' . str_replace("-", "", $this->arguments['uid']) . ' = grecaptcha.render("recaptcha' . $this->arguments['uid'] . '", { "sitekey" : "' . $siteKey .'", "callback" : "captchaCallback' . str_replace("-", "", $this->arguments['uid']) .'", "theme" : "' . $theme . '", "size" : "' . $size . '" }); }</script>';
+        $reCaptchaApi = '<script src="https://www.google.com/recaptcha/api.js?onload=apiCallback' . str_replace("-", "", $this->arguments['uid']) . '&hl=' . $lang . '&render=explicit" async defer></script>';
+        if (!$this->isPowermail()) {
+            $callBack = '<script type="text/javascript">var captchaCallback' . str_replace("-", "", $this->arguments['uid']) . ' = function() { document.getElementById("' . $captchaResponseId . '").value = grecaptcha.getResponse(reCaptchaWidget' . str_replace("-", "", $this->arguments['uid']) . ') }</script>';
+        }
+
+        return $reCaptcha . $callBack . $renderReCaptcha . $reCaptchaApi;
+    }
+
+    private function renderV3($captchaResponseId, $settings)
+    {
+        $callBackFunctionName = 'onLoad' .
+            $this->arguments['type'] . str_replace("-", "", $this->arguments['uid']);
+
+        $captchaResponseField = '';
+        if ($this->isPowermail()) {
+            $captchaResponseField = '<input type="hidden" id="' . $captchaResponseId . '" name="g-recaptcha-response">';
+        }
+
+        $callBack =
+            '<script type="text/javascript">'.
+                'var ' . $callBackFunctionName . ' = function() {'.
+                    'grecaptcha.execute('.
+                        '"' . $settings['reCaptcha']['v3']['siteKey'] . '",'.
+                        '{action: "' . $settings['reCaptcha']['v3']['action'] . '"})'.
+                        '.then(function(token) {'.
+                            'document.getElementById("' . $captchaResponseId . '").value = token;'.
+                        '}'.
+                    ');'.
+                '};'.
+            '</script>';
+        $api =
+            '<script src="https://www.google.com/recaptcha/api.js?'.
+                'render=' . $settings['reCaptcha']['v3']['siteKey'] . '&'.
+                'onload=' . $callBackFunctionName . '"></script>';
+
+        return $captchaResponseField . $callBack . $api;
+    }
+
+    /**
+     * @return bool
+     */
+    private function isPowermail()
+    {
+        return ($this->arguments['type'] == "powermail" ? true : false);
     }
 }

@@ -14,20 +14,23 @@ Users Manual
 Required Configuration
 ^^^^^^^^^^^^^^^^^^^^^^
 
-1) To use reCAPTCHA, you need to sign up for an API key pair for your site: http://www.google.com/recaptcha/admin
+1) To use reCAPTCHA, you need to sign up for an API key pair (v2 and/or v3) for your site: http://www.google.com/recaptcha/admin
 
-2) Set your API key pair in TypoScript:
+2) Set your API key pair in TypoScript constants (v2 and/or v3) and the reCAPTCHA version (2 or 3):
 
 .. code-block:: typoscript
     :linenos:
-    :emphasize-lines: 4, 5
+    :emphasize-lines: 2, 4, 5, 8, 9
 
-    plugin.tx_jhcaptcha {
-        settings {
-            reCaptcha {
-                siteKey =
-                secretKey =
-            }
+    plugin.tx_jhcaptcha.settings.reCaptcha {
+        version =
+        v2 {
+            siteKey =
+            secretKey =
+        }
+        v3 {
+            siteKey =
+            secretKey =
         }
     }
 
@@ -37,24 +40,29 @@ Optional Configuration
 
 .. code-block:: typoscript
     :linenos:
-    :emphasize-lines: 7, 11, 15
+    :emphasize-lines: 6, 10, 14, 19, 21
 
-    plugin.tx_jhcaptcha {
-        settings {
-            reCaptcha {
-                # Description: The color theme of the widget
-                # Options: dark | light
-                # Default: light
-                theme = light
-                # Description: The language of the widget
-                # Options: https://developers.google.com/recaptcha/docs/language
-                # Default: en
-                lang = en
-                # Description: The size of the widget
-                # Options: normal | compact
-                # Default: normal
-                size = normal
-            }
+    plugin.tx_jhcaptcha.settings.reCaptcha {
+        v2 {
+            # Description: The color theme of the widget
+            # Options: dark | light
+            # Default: light
+            theme = light
+            # Description: The language of the widget
+            # Options: https://developers.google.com/recaptcha/docs/language
+            # Default: en
+            lang = en
+            # Description: The size of the widget
+            # Options: normal | compact
+            # Default: normal
+            size = normal
+        }
+        v3 {
+            # Description: Minimum Score (0.0 - 1.0)
+            # Default: 0.5
+            minimumScore = 0.5
+            # Description: See https://developers.google.com/recaptcha/docs/v3
+            action = homepage
         }
     }
 
@@ -81,7 +89,7 @@ The reCAPTCHA can easy be used in the `extension powermail`_. The following step
 
 .. note::
 
-    Note that the usage has only been tested in the powermail versions 3.9 - 4.4!
+    Note that the usage has only been tested in the powermail versions 5.0-5.6, 6.0-6.2 and 7.0!
     Most likely it will also work with later versions.
 
 Create a new field in your form, set a title ("Captcha" for example) and select the type "reCAPTCHA (jh_captcha)".
@@ -111,10 +119,7 @@ First the captcha needs to be included in the master template. Example:
 
     <!-- ###master_spamprotection-jh_captcha_recaptcha### -->
     <div class="row">
-        <div class="large-3 columns">
-            <label class="###is_error_jh_captcha_recaptcha###">###LLL:jh_captcha_recaptcha### ###required_jh_captcha_recaptcha###</label>
-        </div>
-        <div class="large-9 columns">
+        <div class="large-12 columns">
             ###jh_captcha_recaptcha###
             ###error_jh_captcha_recaptcha###
         </div>
@@ -158,6 +163,6 @@ Finally, the label and the error messages must be defined. Example:
 
     <label index="jh_captcha_recaptcha">reCAPTCHA</label>
     <label index="error_jh_captcha_recaptcha_required">reCAPTCHA is a mandatory field.</label>
-    <label index="error_jh_captcha_recaptcha_Tx_JhCaptcha_ErrorCheck_ReCaptcha">reCAPTCHA validation error</label>
+    <label index="error_jh_captcha_recaptcha_recaptcha">reCAPTCHA validation error</label>
 
 Now the reCAPTCHA is ready!

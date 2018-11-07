@@ -8,7 +8,7 @@
 .. _start:
 
 =============================================================
-Google reCAPTCHA v2.0
+Google reCAPTCHA (v2/v3)
 =============================================================
 
 .. only:: html
@@ -23,7 +23,7 @@ Google reCAPTCHA v2.0
 		en
 
 	:Description:
-		Use Google reCAPTCHA v2.0 in your own TYPO3 extensions, EXT:form, EXT:powermail and EXT:formhandler as spam protection.
+		Use Google reCAPTCHA (v2/v3) in your own TYPO3 extensions, EXT:form, EXT:powermail and EXT:formhandler as spam protection.
 
 	:Copyright:
 		2015-2018

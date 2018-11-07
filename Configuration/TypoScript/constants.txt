@@ -1,19 +1,31 @@
 
-plugin.tx_jhcaptcha {
-    settings {
-        reCaptcha {
-            # cat=plugin.tx_jhcaptcha/recaptcha; type=options[dark,light]; label=The color theme of the widget
+plugin.tx_jhcaptcha.settings {
+    reCaptcha {
+        # cat=plugin.tx_jhcaptcha/recaptcha; type=int; label=reCAPTCHA version (2 or 3)
+        version = 3
+        v2 {
+            # cat=plugin.tx_jhcaptcha/recaptcha/v2; type=options[dark,light]; label=The color theme of the widget
             theme = light
-            # cat=plugin.tx_jhcaptcha/recaptcha; type=string; label=The language of the widget: See https://developers.google.com/recaptcha/docs/language
+            # cat=plugin.tx_jhcaptcha/recaptcha/v2; type=string; label=The language of the widget: See https://developers.google.com/recaptcha/docs/language
             lang = en
-            # cat=plugin.tx_jhcaptcha/recaptcha; type=options[normal,compact]; label=The size of the widget
+            # cat=plugin.tx_jhcaptcha/recaptcha/v2; type=options[normal,compact]; label=The size of the widget
             size = normal
-            # cat=plugin.tx_jhcaptcha/recaptcha; type=string; label=Site key: See https://www.google.com/recaptcha/admin
+            # cat=plugin.tx_jhcaptcha/recaptcha/v2; type=string; label=Site key: See https://www.google.com/recaptcha/admin
             siteKey =
-            # cat=plugin.tx_jhcaptcha/recaptcha; type=string; label=Secret key: See https://www.google.com/recaptcha/admin
+            # cat=plugin.tx_jhcaptcha/recaptcha/v2; type=string; label=Secret key: See https://www.google.com/recaptcha/admin
             secretKey =
         }
-        # cat=plugin.tx_jhcaptcha/powermail; type=int; label= If this check fails - add other indication value (0 disables this check completely)
-        powermail.recaptchaId = 11
+        v3 {
+            # cat=plugin.tx_jhcaptcha/recaptcha/v3; type=string; label=Site key: See https://www.google.com/recaptcha/admin
+            siteKey =
+            # cat=plugin.tx_jhcaptcha/recaptcha/v3; type=string; label=Secret key: See https://www.google.com/recaptcha/admin
+            secretKey =
+            # cat=plugin.tx_jhcaptcha/recaptcha/v3; type=string; label=Minimum Score (0.0 - 1.0)
+            minimumScore = 0.5
+            # cat=plugin.tx_jhcaptcha/recaptcha/v3; type=string; label=Action: See https://developers.google.com/recaptcha/docs/v3
+            action = homepage
+        }
     }
+    # cat=plugin.tx_jhcaptcha/powermail; type=int; label= If this check fails - add other indication value (0 disables this check completely)
+    powermail.recaptchaId = 11
 }

@@ -11,7 +11,18 @@
 Änderungshistorie
 =================
 
-2.0.x
+3.0.x
+-----
+
+* [FEATURE] Unterstützung für reCAPTCHA v3 #4
+* [TASK] Erweiterungs-Icon überarbeitet
+* [FEATURE] Unterstützung für TYPO3 9 #3
+* [TASK] Unterstützung für powermail 7 #5
+* [TASK] Unterstützung für powermail 6 #5
+* [!!!][TASK] Unterstützung für powermail 5 (Partial überarbeitet) #5
+* [TASK] Unterstützung für powermail 3.9-4.4 eingestellt
+
+2.1.x
 -----
 
 2.1.1
@@ -27,7 +38,7 @@
 * [FEATURE] Unterstützung für EXT:form (TYPO3 v8)
 
 2.0.0
-^^^^^
+-----
 
 * Unterstützung für TYPO3 6.2 eingestellt
 * Unterstützung für TYPO3 8
