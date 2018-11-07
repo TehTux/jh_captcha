@@ -21,6 +21,9 @@
             <trans-unit id="defaultError">
                 <source>The Captcha is invalid.</source>
             </trans-unit>
+            <trans-unit id="scoreError">
+                <source>You didn't reach the minimum score.</source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

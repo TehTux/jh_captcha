@@ -21,6 +21,9 @@
             <trans-unit id="defaultError">
                 <target>Das Captcha ist ungültig.</target>
             </trans-unit>
+            <trans-unit id="scoreError">
+                <source>Du hast die Mindestpunktzahl nicht erreicht.</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

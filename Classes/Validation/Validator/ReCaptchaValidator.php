@@ -2,7 +2,9 @@
 
 namespace Haffner\JhCaptcha\Validation\Validator;
 
-class ReCaptchaValidator extends \Haffner\JhCaptcha\Validation\Validator\AbstractCaptchaValidator
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
+class ReCaptchaValidator extends AbstractCaptchaValidator
 {
     /**
      * Check if $value is valid. If it is not valid, needs to add an error
@@ -12,32 +14,44 @@ class ReCaptchaValidator extends \Haffner\JhCaptcha\Validation\Validator\Abstrac
      */
     protected function isValid($value)
     {
-        $extensionName = 'jh_captcha';
-        $secret = $this->settings['reCaptcha']['secretKey'];
+        if ($this->settings['reCaptcha']['version'] == 2) {
+            $secret = $this->settings['reCaptcha']['v2']['secretKey'];
+        } else {
+            $secret = $this->settings['reCaptcha']['v3']['secretKey'];
+        }
+
         $url = 'https://www.google.com/recaptcha/api/siteverify';
-        $apiResponse = json_decode(\TYPO3\CMS\Core\Utility\GeneralUtility::getUrl($url.'?secret='.$secret.'&response='.$value), true);
+        $apiResponse = json_decode(
+            GeneralUtility::getUrl($url.'?secret='.$secret.'&response='.$value), true);
+
         if ($apiResponse['success'] == false) {
             if (is_array($apiResponse['error-codes'])) {
                 foreach ($apiResponse['error-codes'] as $errorCode) {
                     switch ($errorCode) {
                         case 'missing-input-secret':
-                            $this->addError($this->translateErrorMessage('missingInputSecret', $extensionName), 1426877004);
+                            $this->addError('missingInputSecret', 1426877004);
                             break;
                         case 'invalid-input-secret':
-                            $this->addError($this->translateErrorMessage('invalidInputSecret', $extensionName), 1426877455);
+                            $this->addError('invalidInputSecret', 1426877455);
                             break;
                         case 'missing-input-response':
-                            $this->addError($this->translateErrorMessage('missingInputResponse', $extensionName), 1426877525);
+                            $this->addError('missingInputResponse', 1426877525);
                             break;
                         case 'invalid-input-response':
-                            $this->addError($this->translateErrorMessage('invalidInputResponse', $extensionName), 1426877590);
+                            $this->addError('invalidInputResponse', 1426877590);
                             break;
                         default:
-                            $this->addError($this->translateErrorMessage('defaultError', $extensionName), 1427031929);
+                            $this->addError('defaultError', 1427031929);
                     }
                 }
             } else {
-                $this->addError($this->translateErrorMessage('defaultError', $extensionName), 1427031929);
+                $this->addError('defaultError', 1427031929);
+            }
+        } else {
+            if ($this->settings['reCaptcha']['version'] != 2 && isset($apiResponse['score'])) {
+                if ($apiResponse['score'] < $this->settings['reCaptcha']['v3']['minimumScore']) {
+                    $this->addError('scoreError', 1541173838);
+                }
             }
         }
     }
