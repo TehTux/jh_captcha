@@ -14,6 +14,11 @@ ChangeLog
 2.0.x
 -----
 
+2.1.3
+^^^^^
+
+* [BUGFIX] EXT:form: Fix validator definition in yaml configuration https://github.com/TehTux/jh_captcha/issues/7
+
 2.1.2
 ^^^^^
 
