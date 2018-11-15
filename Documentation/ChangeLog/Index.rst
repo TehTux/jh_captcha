@@ -14,16 +14,36 @@ ChangeLog
 3.0.x
 -----
 
-* [FEATURE] Add reCAPTCHA v3 support #4
+3.0.1
+^^^^^
+
+* [BUGFIX] EXT:form: Fix validator definition in yaml configuration https://github.com/TehTux/jh_captcha/issues/7
+* [TASK] Remove obsolete TYPO3 version check
+
+3.0.0
+^^^^^
+
+* [FEATURE] Add reCAPTCHA v3 support https://github.com/TehTux/jh_captcha/issues/4
 * [TASK] Update extension icon
-* [FEATURE] Support TYPO3 9 #3
-* [TASK] Support powermail 7 #5
-* [TASK] Support powermail 6 #5
-* [!!!][TASK] Support powermail 5 (Revise partial) #5
+* [FEATURE] Support TYPO3 9 https://github.com/TehTux/jh_captcha/issues/3
+* [TASK] Support powermail 7 https://github.com/TehTux/jh_captcha/issues/5
+* [TASK] Support powermail 6 https://github.com/TehTux/jh_captcha/issues/5
+* [!!!][TASK] Support powermail 5 (Revise partial) https://github.com/TehTux/jh_captcha/issues/5
 * [TASK] Drop support for powermail 3.9-4.4
 
 2.1.x
 -----
+
+2.1.3
+^^^^^
+
+* [BUGFIX] EXT:form: Fix validator definition in yaml configuration https://github.com/TehTux/jh_captcha/issues/7
+
+2.1.2
+^^^^^
+
+* [DOC] Fix formhandler instruction
+* [TASK] Update extension icon
 
 2.1.1
 ^^^^^
