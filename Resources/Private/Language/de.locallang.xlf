@@ -22,7 +22,7 @@
                 <target>Das Captcha ist ungültig.</target>
             </trans-unit>
             <trans-unit id="scoreError">
-                <source>Du hast die Mindestpunktzahl nicht erreicht.</source>
+                <target>Du hast die Mindestpunktzahl nicht erreicht.</target>
             </trans-unit>
         </body>
     </file>

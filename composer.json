@@ -27,5 +27,22 @@
     "psr-4": {
       "Haffner\\JhCaptcha\\": "Classes"
     }
+  },
+  "scripts": {
+    "test:phplint": "find . -name \\*.php ! -path \"./.Build/*\" | parallel --gnu php -d display_errors=stderr -l {} \\;",
+    "post-autoload-dump": [
+      "@php -r 'is_dir($extFolder=__DIR__.\"/.Build/public/typo3conf/ext/\") || mkdir($extFolder, 0777, true);'",
+      "@php -r 'file_exists($extFolder=__DIR__.\"/.Build/public/typo3conf/ext/jh_captcha\") || symlink(__DIR__,$extFolder);'"
+    ]
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "jh_captcha",
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/public"
+    }
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor"
   }
 }

@@ -14,7 +14,15 @@ ChangeLog
 3.0.x
 -----
 
-3.0.1
+3.0.2
+^^^^^
+
+* [TASK] Add configuration for Travis CI
+* [BUGFIX] Fix german translation (PR #12)
+* [TASK] Update documentation configuration (Issue #15)
+* [BUGFIX] Fix powermail on case sensitive file systems (Issue #10)
+
+3.0.2
 ^^^^^
 
 * [BUGFIX] EXT:form: Fix validator definition in yaml configuration https://github.com/TehTux/jh_captcha/issues/7
