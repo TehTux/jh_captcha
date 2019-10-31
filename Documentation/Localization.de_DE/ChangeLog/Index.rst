@@ -14,6 +14,14 @@
 3.0.x
 -----
 
+3.0.2
+^^^^^
+
+* [TASK] Konfiguration für Travis CI hinzugefügt
+* [BUGFIX] Deutsche Übersetzung korrigiert (PR #12)
+* [TASK] Konfiguration für Dokumentation aktualisiert (Issue #15)
+* [BUGFIX] Problem mit Powermail auf Case-sensitiven Dateisystemen behoben (Issue #10)
+
 3.0.1
 ^^^^^
 
