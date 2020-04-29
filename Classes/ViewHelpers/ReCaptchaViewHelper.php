@@ -7,7 +7,6 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class ReCaptchaViewHelper extends AbstractViewHelper
-
 {
     /**
      * As this ViewHelper renders HTML, the output must not be escaped.
