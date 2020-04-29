@@ -5,7 +5,7 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    $_EXTKEY,
+    'jh_captcha',
     'Configuration/TypoScript',
     'Google reCAPTCHA (v2/v3)'
 );
