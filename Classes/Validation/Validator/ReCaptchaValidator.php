@@ -15,9 +15,9 @@ class ReCaptchaValidator extends AbstractCaptchaValidator
     protected function isValid($value)
     {
         if ($this->settings['reCaptcha']['version'] == 2) {
-            $secret = $this->settings['reCaptcha']['v2']['secretKey'];
+            $secret = htmlspecialchars($this->settings['reCaptcha']['v2']['secretKey']);
         } else {
-            $secret = $this->settings['reCaptcha']['v3']['secretKey'];
+            $secret = htmlspecialchars($this->settings['reCaptcha']['v3']['secretKey']);
         }
 
         $url = 'https://www.google.com/recaptcha/api/siteverify';

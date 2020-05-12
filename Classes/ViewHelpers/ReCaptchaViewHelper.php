@@ -62,10 +62,10 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 
     private function renderV2($captchaResponseId, $settings)
     {
-        $siteKey = $settings['reCaptcha']['v2']['siteKey'];
-        $theme = $settings['reCaptcha']['v2']['theme'];
-        $lang = $settings['reCaptcha']['v2']['lang'];
-        $size = $settings['reCaptcha']['v2']['size'];
+        $siteKey = htmlspecialchars($settings['reCaptcha']['v2']['siteKey']);
+        $theme = htmlspecialchars($settings['reCaptcha']['v2']['theme']);
+        $lang = htmlspecialchars($settings['reCaptcha']['v2']['lang']);
+        $size = htmlspecialchars($settings['reCaptcha']['v2']['size']);
 
         $reCaptcha = '<div id="recaptcha' . $this->arguments['uid'] . '"></div>';
         $renderReCaptcha = '<script type="text/javascript">var apiCallback' . str_replace("-", "", $this->arguments['uid']) . ' = function() { reCaptchaWidget' . str_replace("-", "", $this->arguments['uid']) . ' = grecaptcha.render("recaptcha' . $this->arguments['uid'] . '", { "sitekey" : "' . $siteKey .'", "callback" : "captchaCallback' . str_replace("-", "", $this->arguments['uid']) .'", "theme" : "' . $theme . '", "size" : "' . $size . '" }); }</script>';
@@ -91,8 +91,8 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
             '<script type="text/javascript">'.
                 'var ' . $callBackFunctionName . ' = function() {'.
                     'grecaptcha.execute('.
-                        '"' . $settings['reCaptcha']['v3']['siteKey'] . '",'.
-                        '{action: "' . $settings['reCaptcha']['v3']['action'] . '"})'.
+                        '"' . htmlspecialchars($settings['reCaptcha']['v3']['siteKey']) . '",'.
+                        '{action: "' . htmlspecialchars($settings['reCaptcha']['v3']['action']) . '"})'.
                         '.then(function(token) {'.
                             'document.getElementById("' . $captchaResponseId . '").value = token;'.
                         '}'.
@@ -101,7 +101,7 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
             '</script>';
         $api =
             '<script src="https://www.google.com/recaptcha/api.js?'.
-                'render=' . $settings['reCaptcha']['v3']['siteKey'] . '&'.
+                'render=' . htmlspecialchars($settings['reCaptcha']['v3']['siteKey']) . '&'.
                 'onload=' . $callBackFunctionName . '"></script>';
 
         return $captchaResponseField . $callBack . $api;
