@@ -9,10 +9,7 @@ Use Google reCAPTCHA v2.0 in your own TYPO3 extensions, EXT:form, EXT:powermail 
 
 ## Documentation
 
-* [EN - latest](https://docs.typo3.org/typo3cms/extensions/jh_captcha/)
-* [EN - 2.1.3](https://docs.typo3.org/typo3cms/extensions/jh_captcha/2.1.3/)
-* [DE - latest](https://docs.typo3.org/typo3cms/extensions/jh_captcha/de-de/)
-* [DE - 2.1.3](https://docs.typo3.org/typo3cms/extensions/jh_captcha/de-de/2.1.3/)
+* [EN - 2.1.4](https://docs.typo3.org/typo3cms/extensions/jh_captcha/2.1.4/)
 
 ## Installation
 

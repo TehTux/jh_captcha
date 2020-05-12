@@ -14,6 +14,11 @@
 2.0.x
 -----
 
+2.1.4
+^^^^^
+
+* [SECURITY] Escape TypoScript vars to prevent XSS
+
 2.1.3
 ^^^^^
 
