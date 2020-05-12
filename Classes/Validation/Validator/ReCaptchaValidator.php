@@ -13,7 +13,7 @@ class ReCaptchaValidator extends \Haffner\JhCaptcha\Validation\Validator\Abstrac
     protected function isValid($value)
     {
         $extensionName = 'jh_captcha';
-        $secret = $this->settings['reCaptcha']['secretKey'];
+        $secret = htmlspecialchars($this->settings['reCaptcha']['secretKey']);
         $url = 'https://www.google.com/recaptcha/api/siteverify';
         $apiResponse = json_decode(\TYPO3\CMS\Core\Utility\GeneralUtility::getUrl($url.'?secret='.$secret.'&response='.$value), true);
         if ($apiResponse['success'] == false) {

@@ -35,10 +35,10 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
         $settings = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'JhCaptcha');
 
         if ($settings['reCaptcha']['siteKey']) {
-            $siteKey = $settings['reCaptcha']['siteKey'];
-            $theme = $settings['reCaptcha']['theme'];
-            $lang = $settings['reCaptcha']['lang'];
-            $size = $settings['reCaptcha']['size'];
+            $siteKey = htmlspecialchars($settings['reCaptcha']['siteKey']);
+            $theme = htmlspecialchars($settings['reCaptcha']['theme']);
+            $lang = htmlspecialchars($settings['reCaptcha']['lang']);
+            $size = htmlspecialchars($settings['reCaptcha']['size']);
             $uid = $this->arguments['uid'];
             if ($uid) {
                 $captchaResponseId = 'captchaResponse-' . $uid;
