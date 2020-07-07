@@ -14,6 +14,11 @@
 3.0.x
 -----
 
+3.0.3
+^^^^^
+
+* [SECURITY] Escape TypoScript vars to prevent XSS
+
 3.0.2
 ^^^^^
 
