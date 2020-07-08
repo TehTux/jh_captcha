@@ -50,6 +50,6 @@ plugin.tx_powermail {
 
 # EXT:form
 plugin.tx_form {
-    settings.yamlConfigurations.JhCaptchaRecaptcha = EXT:jh_captcha/Configuration/Yaml/ReCaptcha/BaseSetup.yaml
-    view.partialRootPaths.JhCaptchaRecaptcha = EXT:jh_captcha/Resources/Private/Form/Frontend/Partials
+    settings.yamlConfigurations.100 = EXT:jh_captcha/Configuration/Yaml/ReCaptcha/BaseSetup.yaml
+    view.partialRootPaths.100 = EXT:jh_captcha/Resources/Private/Form/Frontend/Partials
 }
