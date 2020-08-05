@@ -1,6 +1,6 @@
 <?php
 
-$EM_CONF['jh_captcha'] = [
+$EM_CONF[$_EXTKEY] = [
     'title' => 'Google reCAPTCHA (v2/v3)',
     'description' => 'Use Google reCAPTCHA (v2/v3) in your own TYPO3 extensions, EXT:form, EXT:powermail and EXT:formhandler as spam protection.',
     'category' => 'fe',

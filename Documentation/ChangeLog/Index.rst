@@ -14,6 +14,11 @@ ChangeLog
 3.0.x
 -----
 
+3.0.3
+^^^^^
+
+* [SECURITY] Escape TypoScript vars to prevent XSS
+
 3.0.2
 ^^^^^
 
@@ -22,7 +27,7 @@ ChangeLog
 * [TASK] Update documentation configuration (Issue #15)
 * [BUGFIX] Fix powermail on case sensitive file systems (Issue #10)
 
-3.0.2
+3.0.1
 ^^^^^
 
 * [BUGFIX] EXT:form: Fix validator definition in yaml configuration https://github.com/TehTux/jh_captcha/issues/7
