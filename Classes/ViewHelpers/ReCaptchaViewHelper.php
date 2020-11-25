@@ -79,32 +79,29 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 
     private function renderV3($captchaResponseId, $settings)
     {
-        $callBackFunctionName = 'onLoad' .
-            $this->arguments['type'] . str_replace("-", "", $this->arguments['uid']);
-
         $captchaResponseField = '';
         if ($this->isPowermail()) {
             $captchaResponseField = '<input type="hidden" id="' . $captchaResponseId . '" name="g-recaptcha-response">';
         }
 
-        $callBack =
-            '<script type="text/javascript">'.
-                'var ' . $callBackFunctionName . ' = function() {'.
-                    'grecaptcha.execute('.
-                        '"' . htmlspecialchars($settings['reCaptcha']['v3']['siteKey']) . '",'.
-                        '{action: "' . htmlspecialchars($settings['reCaptcha']['v3']['action']) . '"})'.
-                        '.then(function(token) {'.
-                            'document.getElementById("' . $captchaResponseId . '").value = token;'.
-                        '}'.
-                    ');'.
-                '};'.
-            '</script>';
-        $api =
-            '<script src="https://www.google.com/recaptcha/api.js?'.
-                'render=' . htmlspecialchars($settings['reCaptcha']['v3']['siteKey']) . '&'.
-                'onload=' . $callBackFunctionName . '"></script>';
-
-        return $captchaResponseField . $callBack . $api;
+        $siteKey = htmlspecialchars($settings['reCaptcha']['v3']['siteKey'], ENT_QUOTES | ENT_HTML5);
+        $action = htmlspecialchars($settings['reCaptcha']['v3']['action'], ENT_QUOTES | ENT_HTML5);
+        $script = <<<EOT
+<script src="https://www.google.com/recaptcha/api.js?render=$siteKey"></script>
+<script>
+grecaptcha.ready(function () {
+  var inputToken = document.getElementById('${captchaResponseId}');
+  var renewToken = function (e) {
+    grecaptcha.execute('${siteKey}', { action: '${action}' }).then(function (token) {
+      inputToken.value = token;
+    });
+  };
+  renewToken();
+  window.setTimeout(renewToken, 100000);
+});
+</script>
+EOT;
+        return $captchaResponseField . $script;
     }
 
     /**
@@ -112,6 +109,6 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
      */
     private function isPowermail()
     {
-        return ($this->arguments['type'] == "powermail" ? true : false);
+        return $this->arguments['type'] === 'powermail';
     }
 }
