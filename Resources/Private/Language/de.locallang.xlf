@@ -18,6 +18,12 @@
             <trans-unit id="invalidInputResponse">
                 <target>Der Antwortparameter ist ungültig.</target>
             </trans-unit>
+            <trans-unit id="badRequest">
+                <target>Die Anfrage ist ungültig oder fehlerhaft.</target>
+            </trans-unit>
+            <trans-unit id="timeoutOrDuplicate">
+                <target>Die Antwort ist nicht mehr gültig: Entweder ist sie zu alt oder wurde zuvor verwendet.</target>
+            </trans-unit>
             <trans-unit id="defaultError">
                 <target>Das Captcha ist ungültig.</target>
             </trans-unit>

@@ -40,6 +40,12 @@ class ReCaptchaValidator extends AbstractCaptchaValidator
                         case 'invalid-input-response':
                             $this->addError('invalidInputResponse', 1426877590);
                             break;
+                        case 'bad-request':
+                            $this->addError('badRequest', 1426877490);
+                            break;
+                        case 'timeout-or-duplicate':
+                            $this->addError('timeoutOrDuplicate', 1426877420);
+                            break;
                         default:
                             $this->addError('defaultError', 1427031929);
                     }
