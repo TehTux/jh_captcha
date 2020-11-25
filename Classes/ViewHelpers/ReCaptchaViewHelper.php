@@ -43,7 +43,7 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
             $captchaResponseId = $captchaResponseId . '-' . $this->arguments['uid'];
         }
 
-        if ($settings['reCaptcha']['version'] == 2) {
+        if ((int)$settings['reCaptcha']['version'] === 2) {
             // render v2
             if ($settings['reCaptcha']['v2']['siteKey']) {
                 return $this->renderV2($captchaResponseId, $settings);
@@ -62,16 +62,22 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 
     private function renderV2($captchaResponseId, $settings)
     {
-        $siteKey = htmlspecialchars($settings['reCaptcha']['v2']['siteKey']);
-        $theme = htmlspecialchars($settings['reCaptcha']['v2']['theme']);
-        $lang = htmlspecialchars($settings['reCaptcha']['v2']['lang']);
-        $size = htmlspecialchars($settings['reCaptcha']['v2']['size']);
+        $siteKey = htmlspecialchars($settings['reCaptcha']['v2']['siteKey'], ENT_QUOTES | ENT_HTML5);
+        $theme = htmlspecialchars($settings['reCaptcha']['v2']['theme'], ENT_QUOTES | ENT_HTML5);
+        $lang = htmlspecialchars($settings['reCaptcha']['v2']['lang'], ENT_QUOTES | ENT_HTML5);
+        $size = htmlspecialchars($settings['reCaptcha']['v2']['size'], ENT_QUOTES | ENT_HTML5);
 
         $reCaptcha = '<div id="recaptcha' . $this->arguments['uid'] . '"></div>';
-        $renderReCaptcha = '<script type="text/javascript">var apiCallback' . str_replace("-", "", $this->arguments['uid']) . ' = function() { reCaptchaWidget' . str_replace("-", "", $this->arguments['uid']) . ' = grecaptcha.render("recaptcha' . $this->arguments['uid'] . '", { "sitekey" : "' . $siteKey .'", "callback" : "captchaCallback' . str_replace("-", "", $this->arguments['uid']) .'", "theme" : "' . $theme . '", "size" : "' . $size . '" }); }</script>';
-        $reCaptchaApi = '<script src="https://www.google.com/recaptcha/api.js?onload=apiCallback' . str_replace("-", "", $this->arguments['uid']) . '&hl=' . $lang . '&render=explicit" async defer></script>';
+        $renderReCaptcha = '<script type="text/javascript">var apiCallback' . str_replace("-", "",
+                $this->arguments['uid']) . ' = function() { reCaptchaWidget' . str_replace("-", "",
+                $this->arguments['uid']) . ' = grecaptcha.render("recaptcha' . $this->arguments['uid'] . '", { "sitekey" : "' . $siteKey . '", "callback" : "captchaCallback' . str_replace("-",
+                "", $this->arguments['uid']) . '", "theme" : "' . $theme . '", "size" : "' . $size . '" }); }</script>';
+        $reCaptchaApi = '<script src="https://www.google.com/recaptcha/api.js?onload=apiCallback' . str_replace("-", "",
+                $this->arguments['uid']) . '&hl=' . $lang . '&render=explicit" async defer></script>';
         if (!$this->isPowermail()) {
-            $callBack = '<script type="text/javascript">var captchaCallback' . str_replace("-", "", $this->arguments['uid']) . ' = function() { document.getElementById("' . $captchaResponseId . '").value = grecaptcha.getResponse(reCaptchaWidget' . str_replace("-", "", $this->arguments['uid']) . ') }</script>';
+            $callBack = '<script type="text/javascript">var captchaCallback' . str_replace("-", "",
+                    $this->arguments['uid']) . ' = function() { document.getElementById("' . $captchaResponseId . '").value = grecaptcha.getResponse(reCaptchaWidget' . str_replace("-",
+                    "", $this->arguments['uid']) . ') }</script>';
         }
 
         return $reCaptcha . $callBack . $renderReCaptcha . $reCaptchaApi;
@@ -88,21 +94,21 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
         }
 
         $callBack =
-            '<script type="text/javascript">'.
-                'var ' . $callBackFunctionName . ' = function() {'.
-                    'grecaptcha.execute('.
-                        '"' . htmlspecialchars($settings['reCaptcha']['v3']['siteKey']) . '",'.
-                        '{action: "' . htmlspecialchars($settings['reCaptcha']['v3']['action']) . '"})'.
-                        '.then(function(token) {'.
-                            'document.getElementById("' . $captchaResponseId . '").value = token;'.
-                        '}'.
-                    ');'.
-                '};'.
+            '<script type="text/javascript">' .
+            'var ' . $callBackFunctionName . ' = function() {' .
+            'grecaptcha.execute(' .
+            '"' . htmlspecialchars($settings['reCaptcha']['v3']['siteKey'], ENT_QUOTES | ENT_HTML5) . '",' .
+            '{action: "' . htmlspecialchars($settings['reCaptcha']['v3']['action'], ENT_QUOTES | ENT_HTML5) . '"})' .
+            '.then(function(token) {' .
+            'document.getElementById("' . $captchaResponseId . '").value = token;' .
+            '}' .
+            ');' .
+            '};' .
             '</script>';
         $api =
-            '<script src="https://www.google.com/recaptcha/api.js?'.
-                'render=' . htmlspecialchars($settings['reCaptcha']['v3']['siteKey']) . '&'.
-                'onload=' . $callBackFunctionName . '"></script>';
+            '<script src="https://www.google.com/recaptcha/api.js?' .
+            'render=' . htmlspecialchars($settings['reCaptcha']['v3']['siteKey'], ENT_QUOTES | ENT_HTML5) . '&' .
+            'onload=' . $callBackFunctionName . '"></script>';
 
         return $captchaResponseField . $callBack . $api;
     }

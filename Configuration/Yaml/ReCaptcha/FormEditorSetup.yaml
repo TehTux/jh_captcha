@@ -20,10 +20,8 @@ TYPO3:
                 iconIdentifier: 't3-form-icon-jhcaptcha-recaptcha'
                 predefinedDefaults:
                   validators:
-                    -
-                      identifier: 'NotEmpty'
-                    -
-                      identifier: 'JhCaptchaRecaptcha'
+                    - identifier: 'NotEmpty'
+                    - identifier: 'JhCaptchaRecaptcha'
 
       mixins:
         formElementMixins:

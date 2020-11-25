@@ -14,17 +14,19 @@ class ReCaptchaValidator extends AbstractCaptchaValidator
      */
     protected function isValid($value)
     {
-        if ($this->settings['reCaptcha']['version'] == 2) {
-            $secret = htmlspecialchars($this->settings['reCaptcha']['v2']['secretKey']);
+        if ((int)$this->settings['reCaptcha']['version'] === 2) {
+            $secret = htmlspecialchars($this->settings['reCaptcha']['v2']['secretKey'], ENT_QUOTES | ENT_HTML5);
         } else {
-            $secret = htmlspecialchars($this->settings['reCaptcha']['v3']['secretKey']);
+            $secret = htmlspecialchars($this->settings['reCaptcha']['v3']['secretKey'], ENT_QUOTES | ENT_HTML5);
         }
 
         $url = 'https://www.google.com/recaptcha/api/siteverify';
         $apiResponse = json_decode(
-            GeneralUtility::getUrl($url.'?secret='.$secret.'&response='.$value), true);
+            GeneralUtility::getUrl($url . '?secret=' . $secret . '&response=' . $value),
+            true
+        );
 
-        if ($apiResponse['success'] == false) {
+        if ((bool)$apiResponse['success'] === false) {
             if (is_array($apiResponse['error-codes'])) {
                 foreach ($apiResponse['error-codes'] as $errorCode) {
                     switch ($errorCode) {
@@ -53,12 +55,8 @@ class ReCaptchaValidator extends AbstractCaptchaValidator
             } else {
                 $this->addError('defaultError', 1427031929);
             }
-        } else {
-            if ($this->settings['reCaptcha']['version'] != 2 && isset($apiResponse['score'])) {
-                if ($apiResponse['score'] < $this->settings['reCaptcha']['v3']['minimumScore']) {
-                    $this->addError('scoreError', 1541173838);
-                }
-            }
+        } elseif ((int)$this->settings['reCaptcha']['version'] !== 2 && isset($apiResponse['score']) && $apiResponse['score'] < $this->settings['reCaptcha']['v3']['minimumScore']) {
+            $this->addError('scoreError', 1541173838);
         }
     }
 }

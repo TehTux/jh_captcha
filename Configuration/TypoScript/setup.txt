@@ -9,6 +9,7 @@ plugin.tx_jhcaptcha {
                 siteKey = {$plugin.tx_jhcaptcha.settings.reCaptcha.v2.siteKey}
                 secretKey = {$plugin.tx_jhcaptcha.settings.reCaptcha.v2.secretKey}
             }
+
             v3 {
                 siteKey = {$plugin.tx_jhcaptcha.settings.reCaptcha.v3.siteKey}
                 secretKey = {$plugin.tx_jhcaptcha.settings.reCaptcha.v3.secretKey}
@@ -19,13 +20,11 @@ plugin.tx_jhcaptcha {
     }
 }
 
-
 # EXT:formhandler
 plugin.Tx_Formhandler.settings {
     markers.jh_captcha_recaptcha = FLUIDTEMPLATE
     markers.jh_captcha_recaptcha.file = EXT:jh_captcha/Resources/Private/Partials/Formhandler/ReCaptcha.html
 }
-
 
 # EXT:powermail
 plugin.tx_powermail {
@@ -41,12 +40,12 @@ plugin.tx_powermail {
         }
     }
 }
+
 [globalVar = LIT:2 = {$plugin.tx_jhcaptcha.settings.reCaptcha.version}]
     plugin.tx_powermail.settings.setup.spamshield.methods.{$plugin.tx_jhcaptcha.settings.powermail.recaptchaId} {
         configuration.secretkey = {$plugin.tx_jhcaptcha.settings.reCaptcha.v2.secretKey}
     }
 [global]
-
 
 # EXT:form
 plugin.tx_form {
