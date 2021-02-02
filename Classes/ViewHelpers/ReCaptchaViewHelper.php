@@ -98,6 +98,7 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
                         '}'.
                     ');'.
                 '};'.
+                'setInterval(' . $callBackFunctionName . ', 100000);'.
             '</script>';
         $api =
             '<script src="https://www.google.com/recaptcha/api.js?'.
