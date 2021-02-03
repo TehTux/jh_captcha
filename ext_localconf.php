@@ -18,3 +18,8 @@ $iconRegistry->registerIcon(
     \TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
     ['name' => 'google']
 );
+
+# EXT:powermail
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+    '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:jh_captcha/Configuration/PageTS/Powermail.typoscript">'
+);

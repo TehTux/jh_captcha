@@ -17,6 +17,7 @@ TYPO3:
                 10: 'TYPO3.CMS.Form.mixins.formElementMixins.JhCaptchaRecaptchaMixin'
               renderingOptions:
                 _isHiddenFormElement: true
+                enabled: false
           validatorsDefinition:
             JhCaptchaRecaptcha:
               implementationClassName: 'Haffner\JhCaptcha\Validation\Validator\ReCaptchaValidator'

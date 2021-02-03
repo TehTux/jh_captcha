@@ -10,7 +10,7 @@ class Powermail extends \In2code\Powermail\Domain\Validator\SpamShield\AbstractM
     /**
      * @return bool true if spam recognized
      */
-    public function spamCheck()
+    public function spamCheck(): bool
     {
         # Skip captcha check on confirmation page
         if (
