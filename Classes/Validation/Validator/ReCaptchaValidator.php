@@ -22,7 +22,9 @@ class ReCaptchaValidator extends AbstractCaptchaValidator
 
         $url = 'https://www.google.com/recaptcha/api/siteverify';
         $apiResponse = json_decode(
-            GeneralUtility::getUrl($url.'?secret='.$secret.'&response='.$value), true);
+            GeneralUtility::getUrl($url.'?secret='.$secret.'&response='.$value),
+            true
+        );
 
         if ($apiResponse['success'] == false) {
             if (is_array($apiResponse['error-codes'])) {

@@ -36,7 +36,9 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
     public function render()
     {
         $settings = $this->configurationManager->getConfiguration(
-            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'JhCaptcha');
+            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
+            'JhCaptcha'
+        );
 
         $captchaResponseId = 'captchaResponse';
         if ($this->arguments['uid']) {
