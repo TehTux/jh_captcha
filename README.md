@@ -10,7 +10,8 @@ Use Google reCAPTCHA (v2/v3) in your own TYPO3 extensions, EXT:form, EXT:powerma
 
 ## Documentation
 
-* [EN - 3.0.3](https://docs.typo3.org/typo3cms/extensions/jh_captcha/3.0.3/)
+* [EN - 4.0](https://docs.typo3.org/p/haffner/jh_captcha/4.0/en-us/)
+* [DE - 4.0](https://docs.typo3.org/p/haffner/jh_captcha/4.0/de-de/)
 
 ## Installation
 

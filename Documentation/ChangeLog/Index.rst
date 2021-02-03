@@ -11,6 +11,17 @@
 ChangeLog
 =========
 
+4.0.x
+-----
+
+4.0.0
+^^^^^
+
+* [FEATURE] Make necessary adjustments for TYPO3 v10 (Issue #20)
+* [TASK] Extend callback function to prevent token timeout (Issue #21)
+* [TASK] Add additional error responses (PR #24)
+* [TASK] Fix deprecated TypoScript condition syntax (Issue #17)
+
 3.0.x
 -----
 
