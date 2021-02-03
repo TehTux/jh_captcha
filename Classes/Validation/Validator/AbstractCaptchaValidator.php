@@ -32,7 +32,9 @@ abstract class AbstractCaptchaValidator extends AbstractValidator
         /** @var ConfigurationManagerInterface $configurationManager */
         $configurationManager = $objectManager->get(ConfigurationManagerInterface::class);
         $this->settings = $configurationManager->getConfiguration(
-            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'JhCaptcha');
+            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
+            'JhCaptcha'
+        );
     }
 
     /**

@@ -41,7 +41,7 @@ plugin.tx_powermail {
         }
     }
 }
-[globalVar = LIT:2 = {$plugin.tx_jhcaptcha.settings.reCaptcha.version}]
+[{$plugin.tx_jhcaptcha.settings.reCaptcha.version} == "2"]
     plugin.tx_powermail.settings.setup.spamshield.methods.{$plugin.tx_jhcaptcha.settings.powermail.recaptchaId} {
         configuration.secretkey = {$plugin.tx_jhcaptcha.settings.reCaptcha.v2.secretKey}
     }

@@ -5,7 +5,7 @@ namespace Haffner\JhCaptcha\ViewHelpers;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
-class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
+class ReCaptchaViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
 {
     /**
      * As this ViewHelper renders HTML, the output must not be escaped.
@@ -36,7 +36,9 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
     public function render()
     {
         $settings = $this->configurationManager->getConfiguration(
-            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'JhCaptcha');
+            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
+            'JhCaptcha'
+        );
 
         $captchaResponseId = 'captchaResponse';
         if ($this->arguments['uid']) {
@@ -98,6 +100,7 @@ class ReCaptchaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
                         '}'.
                     ');'.
                 '};'.
+                'setInterval(' . $callBackFunctionName . ', 100000);'.
             '</script>';
         $api =
             '<script src="https://www.google.com/recaptcha/api.js?'.

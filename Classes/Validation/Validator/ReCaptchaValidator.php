@@ -22,7 +22,9 @@ class ReCaptchaValidator extends AbstractCaptchaValidator
 
         $url = 'https://www.google.com/recaptcha/api/siteverify';
         $apiResponse = json_decode(
-            GeneralUtility::getUrl($url.'?secret='.$secret.'&response='.$value), true);
+            GeneralUtility::getUrl($url.'?secret='.$secret.'&response='.$value),
+            true
+        );
 
         if ($apiResponse['success'] == false) {
             if (is_array($apiResponse['error-codes'])) {
@@ -39,6 +41,12 @@ class ReCaptchaValidator extends AbstractCaptchaValidator
                             break;
                         case 'invalid-input-response':
                             $this->addError('invalidInputResponse', 1426877590);
+                            break;
+                        case 'bad-request':
+                            $this->addError('badRequest', 1426877490);
+                            break;
+                        case 'timeout-or-duplicate':
+                            $this->addError('timeoutOrDuplicate', 1426877420);
                             break;
                         default:
                             $this->addError('defaultError', 1427031929);
