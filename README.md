@@ -1,6 +1,6 @@
 # TYPO3 Extension jh_captcha
 
-[![TYPO3](https://img.shields.io/badge/TYPO3-8.7--9.5-orange.svg?style=flat-square)](https://typo3.org/extensions/repository/view/jh_captcha)
+[![TYPO3](https://img.shields.io/badge/TYPO3-9.5--10.4-orange.svg?style=flat-square)](https://typo3.org/extensions/repository/view/jh_captcha)
 [![StyleCI](https://styleci.io/repos/81837087/shield)](https://styleci.io/repos/81837087/)
 [![Monthly Downloads](https://poser.pugx.org/haffner/jh_captcha/d/monthly)](https://packagist.org/packages/haffner/jh_captcha)
 [![License](https://poser.pugx.org/haffner/jh_captcha/license)](https://packagist.org/packages/haffner/jh_captcha)
