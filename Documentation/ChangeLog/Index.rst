@@ -11,6 +11,16 @@
 ChangeLog
 =========
 
+5.0.x
+-----
+
+5.0.0
+^^^^^
+
+* [FEATURE] Make necessary adjustments for TYPO3 v11 (Issue #28)
+* [BUGFIX] Fix validation (Issue #31)
+* [TASK] Code refactoring
+
 4.0.x
 -----
 
