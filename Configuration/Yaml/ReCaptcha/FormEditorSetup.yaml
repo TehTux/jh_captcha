@@ -24,21 +24,3 @@ TYPO3:
                       identifier: 'NotEmpty'
                     -
                       identifier: 'JhCaptchaRecaptcha'
-
-      mixins:
-        formElementMixins:
-          JhCaptchaRecaptchaMixin:
-            __inheritances:
-              10: 'TYPO3.CMS.Form.mixins.formElementMixins.FormElementMixin'
-            formEditor:
-              predefinedDefaults:
-              editors:
-                230: null
-                900:
-                  identifier: 'validators'
-                  templateName: 'Inspector-ValidatorsEditor'
-                  label: 'formEditor.elements.TextMixin.editor.validators.label'
-                  selectOptions:
-                    10:
-                      value: 'JhCaptchaRecaptcha'
-                      label: 'formEditor.elements.JhCaptchaRecaptcha.label'
