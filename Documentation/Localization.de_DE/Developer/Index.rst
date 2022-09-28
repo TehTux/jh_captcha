@@ -11,6 +11,11 @@
 Entwickler Handbuch
 ===================
 
+.. note::
+
+    Dieser Abschnitt ist veraltet & funktioniert ggf. nicht mehr. Aus Zeitgründen ist es aktuell nicht vorgesehen
+    diesen Abschnitt zu aktualisieren. Erstelle ggf. einen PR.
+
 Füge das Captcha zu deinem domain model hinzu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

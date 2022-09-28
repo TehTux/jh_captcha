@@ -87,8 +87,8 @@ Folgende Schritte sind dafür notwendig:
 
 .. note::
 
-    Bitte beachte, dass die Verwendung nur in den Powermail Versionen 7.4 und 8.2 getestet wurde!
-    Höchstwahrscheinlich läuft es auch mit neueren Versionen.
+    Bitte beachte, dass die Verwendung nur in den Powermail Versionen 8.2 und 10.4 getestet wurde!
+    Wahrscheinlich läuft es auch mit anderen Versionen.
 
 Erstelle dazu in deinem Formular ein neues Feld, vergebe eine Bezeichnung (z.B. "Captcha") und wähle den Typ "reCAPTCHA (jh_captcha)" aus.
 Jetzt ist das reCAPTCHA einsatzbereit!
@@ -96,16 +96,11 @@ Jetzt ist das reCAPTCHA einsatzbereit!
 Verwendung in Formhandler (EXT:formhandler)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Das reCAPTCHA kann leicht in der `Erweiterung Formhandler`_ (Fork: `phorax/formhandler`_ für TYPO3 v9) verwendet werden.
+Das reCAPTCHA kann leicht in der `Erweiterung Formhandler`_ (Fork: `phorax/formhandler`_ für TYPO3 v10) verwendet werden.
 Folgende Schritte sind dafür notwendig:
 
 .. _Erweiterung Formhandler: http://typo3.org/extensions/repository/view/formhandler
 .. _phorax/formhandler: https://github.com/PHORAX/formhandler
-
-.. note::
-
-    Bitte beachte, dass die Verwendung nur in den phorax/formhandler Version 5.0 getestet wurde!
-    Höchstwahrscheinlich läuft es auch mit neueren Versionen.
 
 1. Mastertemplate
 -----------------

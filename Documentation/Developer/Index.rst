@@ -11,6 +11,11 @@
 Developer Corner
 ================
 
+.. note::
+
+    This section is outdated & may no longer work. Due to time constraints it is currently not planned to
+    to update this section. Create a PR if necessary.
+
 Add the Captcha to your domain model
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
