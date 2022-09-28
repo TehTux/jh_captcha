@@ -2,6 +2,9 @@
 
 namespace Haffner\JhCaptcha\Validation\ErrorCheck;
 
+use Haffner\JhCaptcha\Validation\Validator\ReCaptchaValidator;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /**
  * EXT:formhandler ErrorCheck for ReCaptcha.
  */
@@ -16,7 +19,7 @@ class ReCaptcha extends \Typoheads\Formhandler\Validator\ErrorCheck\AbstractErro
     {
         $checkFailed = '';
         if (isset($this->gp[$this->formFieldName])) {
-            $reCaptchaValidator = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('Haffner\JhCaptcha\Validation\Validator\ReCaptchaValidator');
+            $reCaptchaValidator = GeneralUtility::makeInstance(ReCaptchaValidator::class);
             // validate the captcha
             $result = $reCaptchaValidator->validate($this->gp[$this->formFieldName]);
             // check errors
