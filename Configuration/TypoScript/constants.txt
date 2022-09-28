@@ -1,7 +1,7 @@
 
 plugin.tx_jhcaptcha.settings {
     reCaptcha {
-        # cat=plugin.tx_jhcaptcha/recaptcha; type=int; label=reCAPTCHA version (2 or 3)
+        # cat=plugin.tx_jhcaptcha/recaptcha; type=options[2,3]; label=reCAPTCHA version (2 or 3)
         version = 3
         v2 {
             # cat=plugin.tx_jhcaptcha/recaptcha/v2; type=options[dark,light]; label=The color theme of the widget
@@ -10,15 +10,15 @@ plugin.tx_jhcaptcha.settings {
             lang = en
             # cat=plugin.tx_jhcaptcha/recaptcha/v2; type=options[normal,compact]; label=The size of the widget
             size = normal
-            # cat=plugin.tx_jhcaptcha/recaptcha/v2; type=string; label=Site key: See https://www.google.com/recaptcha/admin
+            # cat=plugin.tx_jhcaptcha/recaptcha/v2; type=string; label=Site key (v2): See https://www.google.com/recaptcha/admin
             siteKey =
-            # cat=plugin.tx_jhcaptcha/recaptcha/v2; type=string; label=Secret key: See https://www.google.com/recaptcha/admin
+            # cat=plugin.tx_jhcaptcha/recaptcha/v2; type=string; label=Secret key (v2): See https://www.google.com/recaptcha/admin
             secretKey =
         }
         v3 {
-            # cat=plugin.tx_jhcaptcha/recaptcha/v3; type=string; label=Site key: See https://www.google.com/recaptcha/admin
+            # cat=plugin.tx_jhcaptcha/recaptcha/v3; type=string; label=Site key (v3): See https://www.google.com/recaptcha/admin
             siteKey =
-            # cat=plugin.tx_jhcaptcha/recaptcha/v3; type=string; label=Secret key: See https://www.google.com/recaptcha/admin
+            # cat=plugin.tx_jhcaptcha/recaptcha/v3; type=string; label=Secret key (v3): See https://www.google.com/recaptcha/admin
             secretKey =
             # cat=plugin.tx_jhcaptcha/recaptcha/v3; type=string; label=Minimum Score (0.0 - 1.0)
             minimumScore = 0.5
