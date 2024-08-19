@@ -4,7 +4,6 @@ namespace Haffner\JhCaptcha\Validation\Validator;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
 
 abstract class AbstractCaptchaValidator extends AbstractValidator
@@ -23,18 +22,15 @@ abstract class AbstractCaptchaValidator extends AbstractValidator
     /**
      * @var array Extension TypoScript
      */
-    protected $settings;
+    protected array $settings;
 
-    public function __construct(array $options = array())
+    public function __construct(ConfigurationManagerInterface $configurationManager)
     {
-        parent::__construct($options);
-        /** @var ObjectManager $objectManager */
-        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-        /** @var ConfigurationManagerInterface $configurationManager */
-        $configurationManager = $objectManager->get(ConfigurationManagerInterface::class);
+//        /** @var ConfigurationManagerInterface $configurationManager */
+//        $configurationManager = GeneralUtility::makeInstance(ConfigurationManagerInterface::class);
         $this->settings = $configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
-            'JhCaptcha'
+            'JhCaptcha',
         );
     }
 
@@ -43,11 +39,9 @@ abstract class AbstractCaptchaValidator extends AbstractValidator
      *
      * @param string $translateKey
      * @param int    $code         The error code (a unix timestamp)
-     * @param array  $arguments    Arguments to be replaced in message
-     * @param string $title        title of the error
      */
-    protected function addError($translateKey, $code, array $arguments = [], $title = '')
+    protected function addTranslatedError(string $translateKey, int $code): void
     {
-        parent::addError($this->translateErrorMessage($translateKey, 'jh_captcha'), $code);
+        $this->addError($this->translateErrorMessage($translateKey, 'jh_captcha'), $code);
     }
 }

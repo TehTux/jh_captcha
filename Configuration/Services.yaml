@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Haffner\JhCaptcha\:
+    resource: '../Classes/*'
+    exclude:
+      - '../Classes/**/{Model,Exception}/*'
+

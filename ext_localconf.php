@@ -1,6 +1,6 @@
 <?php
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 ############
 # EXT:form #
@@ -15,8 +15,8 @@ $iconRegistry = TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
 );
 $iconRegistry->registerIcon(
     't3-form-icon-jhcaptcha-recaptcha',
-    \TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
-    ['name' => 'google']
+    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+    ['source' => 'EXT:jh_captcha/Resources/Public/Icons/google.svg']
 );
 
 # EXT:powermail

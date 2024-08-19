@@ -1,0 +1,55 @@
+plugin.tx_jhcaptcha {
+    settings {
+        reCaptcha {
+            version = {$plugin.tx_jhcaptcha.settings.reCaptcha.version}
+            v2 {
+                theme = {$plugin.tx_jhcaptcha.settings.reCaptcha.v2.theme}
+                lang = {$plugin.tx_jhcaptcha.settings.reCaptcha.v2.lang}
+                size = {$plugin.tx_jhcaptcha.settings.reCaptcha.v2.size}
+                siteKey = {$plugin.tx_jhcaptcha.settings.reCaptcha.v2.siteKey}
+                secretKey = {$plugin.tx_jhcaptcha.settings.reCaptcha.v2.secretKey}
+            }
+            v3 {
+                siteKey = {$plugin.tx_jhcaptcha.settings.reCaptcha.v3.siteKey}
+                secretKey = {$plugin.tx_jhcaptcha.settings.reCaptcha.v3.secretKey}
+                minimumScore = {$plugin.tx_jhcaptcha.settings.reCaptcha.v3.minimumScore}
+                action = {$plugin.tx_jhcaptcha.settings.reCaptcha.v3.action}
+            }
+        }
+    }
+}
+
+
+# EXT:formhandler
+plugin.Tx_Formhandler.settings {
+    markers.jh_captcha_recaptcha = FLUIDTEMPLATE
+    markers.jh_captcha_recaptcha.file = EXT:jh_captcha/Resources/Private/Partials/Formhandler/ReCaptcha.html
+}
+
+
+# EXT:powermail
+plugin.tx_powermail {
+    view.partialRootPaths.JhCaptcha = EXT:jh_captcha/Resources/Private/Powermail/Partials
+    settings.setup.spamshield {
+        _enable = 1
+        methods.{$plugin.tx_jhcaptcha.settings.powermail.recaptchaId} {
+            _enable = 1
+            name = reCAPTCHA (jh_captcha)
+            class = Haffner\JhCaptcha\Validation\Validator\Powermail
+            indication = {$plugin.tx_jhcaptcha.settings.powermail.recaptchaId}
+            configuration.secretkey = {$plugin.tx_jhcaptcha.settings.reCaptcha.v3.secretKey}
+        }
+    }
+}
+[{$plugin.tx_jhcaptcha.settings.reCaptcha.version} == "2"]
+    plugin.tx_powermail.settings.setup.spamshield.methods.{$plugin.tx_jhcaptcha.settings.powermail.recaptchaId} {
+        configuration.secretkey = {$plugin.tx_jhcaptcha.settings.reCaptcha.v2.secretKey}
+    }
+[global]
+
+
+# EXT:form
+plugin.tx_form {
+    settings.yamlConfigurations.JhCaptchaRecaptcha = EXT:jh_captcha/Configuration/Yaml/ReCaptcha/BaseSetup.yaml
+    view.partialRootPaths.JhCaptchaRecaptcha = EXT:jh_captcha/Resources/Private/Form/Frontend/Partials
+}

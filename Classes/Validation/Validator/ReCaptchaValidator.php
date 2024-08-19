@@ -12,7 +12,7 @@ class ReCaptchaValidator extends AbstractCaptchaValidator
      *
      * @param mixed $value
      */
-    protected function isValid($value)
+    protected function isValid(mixed $value): void
     {
         if ($this->settings['reCaptcha']['version'] == 2) {
             $secret = htmlspecialchars($this->settings['reCaptcha']['v2']['secretKey']);
@@ -31,34 +31,34 @@ class ReCaptchaValidator extends AbstractCaptchaValidator
                 foreach ($apiResponse['error-codes'] as $errorCode) {
                     switch ($errorCode) {
                         case 'missing-input-secret':
-                            $this->addError('missingInputSecret', 1426877004);
+                            $this->addTranslatedError('missingInputSecret', 1426877004);
                             break;
                         case 'invalid-input-secret':
-                            $this->addError('invalidInputSecret', 1426877455);
+                            $this->addTranslatedError('invalidInputSecret', 1426877455);
                             break;
                         case 'missing-input-response':
-                            $this->addError('missingInputResponse', 1426877525);
+                            $this->addTranslatedError('missingInputResponse', 1426877525);
                             break;
                         case 'invalid-input-response':
-                            $this->addError('invalidInputResponse', 1426877590);
+                            $this->addTranslatedError('invalidInputResponse', 1426877590);
                             break;
                         case 'bad-request':
-                            $this->addError('badRequest', 1426877490);
+                            $this->addTranslatedError('badRequest', 1426877490);
                             break;
                         case 'timeout-or-duplicate':
-                            $this->addError('timeoutOrDuplicate', 1426877420);
+                            $this->addTranslatedError('timeoutOrDuplicate', 1426877420);
                             break;
                         default:
-                            $this->addError('defaultError', 1427031929);
+                            $this->addTranslatedError('defaultError', 1427031929);
                     }
                 }
             } else {
-                $this->addError('defaultError', 1427031929);
+                $this->addTranslatedError('defaultError', 1427031929);
             }
         } else {
             if ($this->settings['reCaptcha']['version'] != 2 && isset($apiResponse['score'])) {
                 if ($apiResponse['score'] < $this->settings['reCaptcha']['v3']['minimumScore']) {
-                    $this->addError('scoreError', 1541173838);
+                    $this->addTranslatedError('scoreError', 1541173838);
                 }
             }
         }
